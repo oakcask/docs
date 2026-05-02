@@ -3,3 +3,22 @@
 ## What is this?
 
 This involves using AI agents to conduct research and thought experiments, and then recording the results.
+
+## License
+
+Except where otherwise noted, the documents provided by this project, excluding this [README.md](./README.md),
+are dedicated to the public domain under CC0 1.0 Universal (or The Unlicense), in service of the common good.
+
+We intend these materials to be used as freely as possible.
+Japanese copyright law, where the primary author resides,
+does not define “Public Domain” as a single statutory category equivalent to that concept in some other jurisdictions.
+In addition, moral rights (著作者人格権) are personal to the author and cannot be transferred under Japanese law.
+
+Accordingly, to the fullest extent permitted by applicable law,
+the authors agree not to assert or exercise moral rights in these materials,
+including the right of integrity (同一性保持権) and the right to determine whether and how the author’s name is indicated (氏名表示権).
+
+We make reasonable efforts to cite sources and references honestly.
+However, because some content may be generated or assisted by AI systems,
+we cannot completely eliminate the possibility that protected third-party expression has been unintentionally included.
+If you discover a copyright, attribution, or licensing problem, please contact us by creating an issue.
