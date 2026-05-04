@@ -4,9 +4,9 @@
 
 ## ビジネス言説・批判記事
 
-- 河合薫（2025）「職場にはびこる『言語化』のプレッシャー 若者を追い詰める呪いの言葉」『日経ビジネス』2025年9月18日。本文取得制限あり。URL: https://business.nikkei.com/atcl/seminar/19/00118/00376/
-- 勅使川原真衣（2026）「『言語化が得意＝仕事ができる人』という評価は思い込み 人事評価に20年関わった専門家が明かす、組織が陥る本質的な誤り」『ログミーBusiness』2026年3月11日。無料会員登録後に続きの閲覧が必要。URL: https://logmi.jp/main/social_economy/333366
 - 木暮太一（2025）「〖要注意〗『言語化ハラスメント』が職場で急増中。部下を黙らせる“一言”とは？」『ダイヤモンド・オンライン』2025年10月18日 6:00。URL: https://diamond.jp/articles/-/374933
+- PHP人材開発（2025）「若手社員の言語化トレーニング。能力向上で仕事の質を高める」2025年3月13日更新。URL: https://hrd.php.co.jp/mid-level/articles/post-1271.php
+- パーソルクロステクノロジー（2021）「ビジネスチャットの意思疎通、どうしてすれ違う？ 精度の高い言語化は、文章を書く前からはじまる」『i:Engineer』2021年12月16日。URL: https://staff.persol-xtech.co.jp/i-engineer/human/gengo
 - 文化放送（2026）「今、何でもかんでも言語化する時代！ 『言語化ブーム』の光と影を指摘する！」『文化放送』2026年3月4日。URL: https://www.joqr.co.jp/qr/article/170981/
 - 株式会社ソフィア（2025）「言語化とは何か？重要性とビジネスへの応用、鍛える方法まで徹底解説」2025年7月15日更新。URL: https://www.sofia-inc.com/blog/17090.html
 
@@ -71,9 +71,14 @@
 ## 組織学習・教育
 
 - Argyris, C., & Schön, D. A. (1978). *Organizational Learning: A Theory of Action Perspective*. Addison-Wesley. ISBN: 9780201001747
+- Detert, J. R., & Burris, E. R. (2007). “Leadership Behavior and Employee Voice: Is the Door Really Open?” *Academy of Management Journal*, 50(4), 869-884. DOI: https://doi.org/10.5465/amj.2007.26279183
+- Detert, J. R., Burris, E. R., Harrison, D. A., & Martin, S. R. (2013). “Voice Flows to and around Leaders: Understanding When Units Are Helped or Hurt by Employee Voice.” *Administrative Science Quarterly*, 58(4), 624-668. DOI: https://doi.org/10.1177/0001839213510151
 - Edmondson, A. C. (1999). “Psychological Safety and Learning Behavior in Work Teams.” *Administrative Science Quarterly*, 44(2), 350-383. DOI: https://doi.org/10.2307/2666999
 - Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). “The Role of Deliberate Practice in the Acquisition of Expert Performance.” *Psychological Review*, 100(3), 363-406. DOI: https://doi.org/10.1037/0033-295X.100.3.363
 - GitLab. (n.d.). “How to embrace asynchronous communication for remote work.” *The GitLab Handbook*. URL: https://handbook.gitlab.com/handbook/company/culture/all-remote/asynchronous/
+- 厚生労働省（n.d.-a）「パワーハラスメントとは」『あかるい職場応援団』。URL: https://www.no-harassment.mhlw.go.jp/foundation/harassment_list/power-hara/
+- 厚生労働省（n.d.-b）「テレワーク」『確かめよう労働条件』。URL: https://www.check-roudou.mhlw.go.jp/study/roudousya_telework.html
+- Morrison, E. W. (2014). “Employee Voice and Silence.” *Annual Review of Organizational Psychology and Organizational Behavior*, 1, 173-197. DOI: https://doi.org/10.1146/annurev-orgpsych-031413-091328
 - Nonaka, I., & Takeuchi, H. (1995). *The Knowledge-Creating Company: How Japanese Companies Create the Dynamics of Innovation*. Oxford University Press. ISBN: 9780195092691
 - Vygotsky, L. S. (1934/1962). *Thought and Language*. MIT Press.
 - Wood, D., Bruner, J. S., & Ross, G. (1976). “The Role of Tutoring in Problem Solving.” *Journal of Child Psychology and Psychiatry*, 17(2), 89-100. DOI: https://doi.org/10.1111/j.1469-7610.1976.tb00381.x
