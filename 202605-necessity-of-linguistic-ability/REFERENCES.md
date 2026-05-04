@@ -29,7 +29,7 @@
 - Brown, N., & Wilson, G. (Eds.). (2011-2012). *The Architecture of Open Source Applications*. URL: https://aosabook.org/
 - Evans, E. (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley. ISBN: 9780321125217
 - Fowler, M. (1999/2018). *Refactoring: Improving the Design of Existing Code*. Addison-Wesley. ISBN: 9780134757599
-- Fowler, M. (2006). “Ubiquitous Language.” URL: https://martinfowler.com/bliki/UbiquitousLanguage.html
+- Fowler, M. (2006, October 31). “Ubiquitous Language.” URL: https://martinfowler.com/bliki/UbiquitousLanguage.html
 - ISO/IEC/IEEE 29148:2018. *Systems and Software Engineering -- Life Cycle Processes -- Requirements Engineering*. URL: https://www.iso.org/standard/72089.html
 - Knuth, D. E. (1984). “Literate Programming.” *The Computer Journal*, 27(2), 97-111. DOI: https://doi.org/10.1093/comjnl/27.2.97
 - Martin, R. C. (2008). *Clean Code: A Handbook of Agile Software Craftsmanship*. Prentice Hall. ISBN: 9780132350884
@@ -41,15 +41,21 @@
 
 - Barke, S., James, M. B., & Polikarpova, N. (2023). “Grounded Copilot: How Programmers Interact with Code-Generating Models.” *Proceedings of the ACM on Programming Languages*, 7(OOPSLA1), 85-111. DOI: https://doi.org/10.1145/3586030
 - Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.” arXiv:2507.09089. DOI: https://doi.org/10.48550/arXiv.2507.09089 URL: https://arxiv.org/abs/2507.09089
+- Beurer-Kellner, L., Buesser, B., Creţu, A.-M., Debenedetti, E., Dobos, D., Fabian, D., Fischer, M., Froelicher, D., Grosse, K., Naeff, D., Ozoani, E., Paverd, A., Tramèr, F., & Volhejn, V. (2025). “Design Patterns for Securing LLM Agents against Prompt Injections.” arXiv:2506.08837. DOI: https://doi.org/10.48550/arXiv.2506.08837 URL: https://arxiv.org/abs/2506.08837
+- Chismon, D. (2025, December 8). “Prompt injection is not SQL injection (it may be worse).” National Cyber Security Centre. URL: https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection
+- Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). “Defeating Prompt Injections by Design.” arXiv:2503.18813. DOI: https://doi.org/10.48550/arXiv.2503.18813 URL: https://arxiv.org/abs/2503.18813
+- Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., & Khabsa, M. (2023). “Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.” arXiv:2312.06674. DOI: https://doi.org/10.48550/arXiv.2312.06674 URL: https://arxiv.org/abs/2312.06674
 - OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt
 - OpenAI. (n.d.). “Prompt engineering.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompt-engineering
 - OpenAI. (n.d.). “Prompting.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompting
+- OWASP. (2024, November 17). “OWASP Top 10 for LLM Applications 2025.” OWASP GenAI Security Project. URL: https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/
 - Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). “The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.” arXiv:2302.06590. DOI: https://doi.org/10.48550/arXiv.2302.06590 URL: https://arxiv.org/abs/2302.06590
 - Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023). “Do Users Write More Insecure Code with AI Assistants?” *Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security*, 2785-2799. DOI: https://doi.org/10.1145/3576915.3623157
+- Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C., & Cohen, J. (2023). “NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails.” arXiv:2310.10501. DOI: https://doi.org/10.48550/arXiv.2310.10501 URL: https://arxiv.org/abs/2310.10501
 - Sasaki, Y., Washizaki, H., Li, J., Sander, D., Yoshioka, N., & Fukazawa, Y. (2024). “Systematic Literature Review of Prompt Engineering Patterns in Software Engineering.” *2024 IEEE 48th Annual Computers, Software, and Applications Conference (COMPSAC)*, 670-675. DOI: https://doi.org/10.1109/COMPSAC61105.2024.00096
 - Vaithilingam, P., Zhang, T., & Glassman, E. L. (2022). “Expectation vs. Experience: Evaluating the Usability of Code Generation Tools Powered by Large Language Models.” *CHI Conference on Human Factors in Computing Systems Extended Abstracts*, 1-7. DOI: https://doi.org/10.1145/3491101.3519665
-- White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C. (2023). “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” arXiv:2302.11382. DOI: https://doi.org/10.48550/arXiv.2302.11382 URL: https://arxiv.org/abs/2302.11382
-- White, J., Hays, S., Fu, Q., Spencer-Smith, J., & Schmidt, D. C. (2023). “ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design.” arXiv:2303.07839. DOI: https://doi.org/10.48550/arXiv.2303.07839 URL: https://arxiv.org/abs/2303.07839
+- White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C. (2023a). “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” arXiv:2302.11382. DOI: https://doi.org/10.48550/arXiv.2302.11382 URL: https://arxiv.org/abs/2302.11382
+- White, J., Hays, S., Fu, Q., Spencer-Smith, J., & Schmidt, D. C. (2023b). “ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design.” arXiv:2303.07839. DOI: https://doi.org/10.48550/arXiv.2303.07839 URL: https://arxiv.org/abs/2303.07839
 - Zamfirescu-Pereira, J. D., Wong, R. Y., Hartmann, B., & Yang, Q. (2023). “Why Johnny Can’t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts.” *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems*, Article 437, 1-21. DOI: https://doi.org/10.1145/3544548.3581388
 
 ## 組織学習・教育

@@ -38,9 +38,15 @@
 ## AI協業・プロンプトエンジニアリング
 
 - Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.” METR/arXiv.
+- Beurer-Kellner, L. et al. (2025). “Design Patterns for Securing LLM Agents against Prompt Injections.” arXiv.
+- Chismon, D. (2025). “Prompt injection is not SQL injection (it may be worse).” NCSC.
+- Debenedetti, E. et al. (2025). “Defeating Prompt Injections by Design.” arXiv.
+- Inan, H. et al. (2023). “Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.” arXiv.
 - OpenAI. “Prompt engineering best practices for ChatGPT.”
 - OpenAI. “Prompt engineering.” OpenAI API Docs.
+- OWASP. (2024). “OWASP Top 10 for LLM Applications 2025.”
 - Peng, S. et al. (2023). “The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.” arXiv.
+- Rebedea, T. et al. (2023). “NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails.” arXiv/EMNLP 2023.
 - Sasaki, Y. et al. (2024). “Systematic Literature Review of Prompt Engineering Patterns in Software Engineering.”
 - White, J. et al. (2023). “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” arXiv.
 - White, J. et al. (2023). “ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design.” arXiv.
