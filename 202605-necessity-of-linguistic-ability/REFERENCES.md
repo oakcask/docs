@@ -14,13 +14,23 @@
 
 - Baddeley, A. D., & Hitch, G. J. (1974). “Working Memory.” In G. H. Bower (Ed.), *The Psychology of Learning and Motivation*, 8, 47-89. DOI: https://doi.org/10.1016/S0079-7421(08)60452-1
 - Carroll, J. B. (1993). *Human Cognitive Abilities: A Survey of Factor-Analytic Studies*. Cambridge University Press. ISBN: 9780521382755
+- Chase, W. G., & Simon, H. A. (1973). “Perception in Chess.” *Cognitive Psychology*, 4(1), 55-81. DOI: https://doi.org/10.1016/0010-0285(73)90004-2
+- Chi, M. T. H., Feltovich, P. J., & Glaser, R. (1981). “Categorization and Representation of Physics Problems by Experts and Novices.” *Cognitive Science*, 5(2), 121-152. DOI: https://doi.org/10.1207/S15516709COG0502_2
 - Chi, M. T. H., Bassok, M., Lewis, M. W., Reimann, P., & Glaser, R. (1989). “Self-Explanations: How Students Study and Use Examples in Learning to Solve Problems.” *Cognitive Science*, 13(2), 145-182. DOI: https://doi.org/10.1016/0364-0213(89)90002-5
+- Ericsson, K. A., & Kintsch, W. (1995). “Long-Term Working Memory.” *Psychological Review*, 102(2), 211-245. DOI: https://doi.org/10.1037/0033-295X.102.2.211
 - Flavell, J. H. (1979). “Metacognition and Cognitive Monitoring: A New Area of Cognitive-Developmental Inquiry.” *American Psychologist*, 34(10), 906-911. DOI: https://doi.org/10.1037/0003-066X.34.10.906
 - Flower, L., & Hayes, J. R. (1981). “A Cognitive Process Theory of Writing.” *College Composition and Communication*, 32(4), 365-387. DOI: https://doi.org/10.2307/356600
+- Kahneman, D., & Klein, G. (2009). “Conditions for Intuitive Expertise: A Failure to Disagree.” *American Psychologist*, 64(6), 515-526. DOI: https://doi.org/10.1037/a0016755
 - Levelt, W. J. M. (1989). *Speaking: From Intention to Articulation*. MIT Press. ISBN: 9780262121378
 - Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). “Putting Feelings Into Words: Affect Labeling Disrupts Amygdala Activity in Response to Affective Stimuli.” *Psychological Science*, 18(5), 421-428. DOI: https://doi.org/10.1111/j.1467-9280.2007.01916.x
+- Nisbett, R. E., & Wilson, T. D. (1977). “Telling More than We Can Know: Verbal Reports on Mental Processes.” *Psychological Review*, 84(3), 231-259. DOI: https://doi.org/10.1037/0033-295X.84.3.231
 - Schooler, J. W., & Engstler-Schooler, T. Y. (1990). “Verbal Overshadowing of Visual Memories: Some Things Are Better Left Unsaid.” *Cognitive Psychology*, 22(1), 36-71. DOI: https://doi.org/10.1016/0010-0285(90)90003-M
+- Simon, H. A. (1973). “The Structure of Ill Structured Problems.” *Artificial Intelligence*, 4(3-4), 181-201. DOI: https://doi.org/10.1016/0004-3702(73)90011-8
 - Toulmin, S. E. (1958). *The Uses of Argument*. Cambridge University Press. ISBN: 9780521534833
+
+## 自然主義的意思決定
+
+- Klein, G. A., Calderwood, R., & Clinton-Cirocco, A. (1986). “Rapid Decision Making on the Fire Ground.” *Proceedings of the Human Factors Society Annual Meeting*, 30(6), 576-580. DOI: https://doi.org/10.1177/154193128603000616
 
 ## ソフトウェア工学
 
