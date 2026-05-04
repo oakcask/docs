@@ -4,14 +4,14 @@
 
 * `src/TOC.md`: 章立て案
 * `src/{n}.md`: レポートに含めるべき内容のサマリ。第{n}章
-* `src/ABSTRACT.md`: レポートのアブストラクト案
+* `src/ABSTRACT.md`: レポートの要旨案
 * `src/REFERENCES.md`: このレポートを書くにあたっての参考文献
 * `src/SUBCULTURE_REPORT.md`: 日本のサブカルチャーにおける実例
 * `REVIEW.md`: レビュー結果
 
 ## Artifacts
 
-* `ABSTRACT.md`: レポートのアブストラクト
+* `ABSTRACT.md`: レポートの要旨
 * `REFERENCES.md`: レポートの参考文献一覧
 * `TOC.md`: 目次
 * `sections/{n}.md`: 第{n}章
