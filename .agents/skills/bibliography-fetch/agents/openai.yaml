@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bibliography Fetch"
+  short_description: "Find references using cache before search"
+  default_prompt: "Use $bibliography-fetch to find citations while reusing the bibliography cache."
