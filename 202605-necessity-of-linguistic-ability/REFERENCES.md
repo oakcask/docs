@@ -1,12 +1,13 @@
 # 参考文献一覧
 
-アクセス日は、特に断りのない限り2026年5月4日である。ウェブ記事の公開日・更新日は、公開ページで確認できる範囲を記す。
+アクセス日は、特に断りのない限り2026年5月5日である。ウェブ記事の公開日・更新日は、公開ページで確認できる範囲を記す。
 
 ## ビジネス言説・批判記事
 
 - 木暮太一（2025）「〖要注意〗『言語化ハラスメント』が職場で急増中。部下を黙らせる“一言”とは？」『ダイヤモンド・オンライン』2025年10月18日 6:00。URL: https://diamond.jp/articles/-/374933
 - PHP人材開発（2025）「若手社員の言語化トレーニング。能力向上で仕事の質を高める」2025年3月13日更新。URL: https://hrd.php.co.jp/mid-level/articles/post-1271.php
 - パーソルクロステクノロジー（2021）「ビジネスチャットの意思疎通、どうしてすれ違う？ 精度の高い言語化は、文章を書く前からはじまる」『i:Engineer』2021年12月16日。URL: https://staff.persol-xtech.co.jp/i-engineer/human/gengo
+- ひきたよしあき（2024）『人気スピーチライターが教える モヤモヤを言葉に変える「言語化」講座』PHP研究所。ISBN: 978-4-569-85651-3
 - 文化放送（2026）「今、何でもかんでも言語化する時代！ 『言語化ブーム』の光と影を指摘する！」『文化放送』2026年3月4日。URL: https://www.joqr.co.jp/qr/article/170981/
 - 株式会社ソフィア（2025）「言語化とは何か？重要性とビジネスへの応用、鍛える方法まで徹底解説」2025年7月15日更新。URL: https://www.sofia-inc.com/blog/17090.html
 
@@ -50,14 +51,13 @@
 ## AI協業・プロンプトエンジニアリング
 
 - Barke, S., James, M. B., & Polikarpova, N. (2023). “Grounded Copilot: How Programmers Interact with Code-Generating Models.” *Proceedings of the ACM on Programming Languages*, 7(OOPSLA1), 85-111. DOI: https://doi.org/10.1145/3586030
-- Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.” arXiv:2507.09089. DOI: https://doi.org/10.48550/arXiv.2507.09089 URL: https://arxiv.org/abs/2507.09089
-- Beurer-Kellner, L., Buesser, B., Creţu, A.-M., Debenedetti, E., Dobos, D., Fabian, D., Fischer, M., Froelicher, D., Grosse, K., Naeff, D., Ozoani, E., Paverd, A., Tramèr, F., & Volhejn, V. (2025). “Design Patterns for Securing LLM Agents against Prompt Injections.” arXiv:2506.08837. DOI: https://doi.org/10.48550/arXiv.2506.08837 URL: https://arxiv.org/abs/2506.08837
+- Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.” arXiv:2507.09089v2. DOI: https://doi.org/10.48550/arXiv.2507.09089 URL: https://arxiv.org/abs/2507.09089
+- Beurer-Kellner, L., Buesser, B., Creţu, A.-M., Debenedetti, E., Dobos, D., Fabian, D., Fischer, M., Froelicher, D., Grosse, K., Naeff, D., Ozoani, E., Paverd, A., Tramèr, F., & Volhejn, V. (2025). “Design Patterns for Securing LLM Agents against Prompt Injections.” arXiv:2506.08837v3. DOI: https://doi.org/10.48550/arXiv.2506.08837 URL: https://arxiv.org/abs/2506.08837
 - Chismon, D. (2025, December 8). “Prompt injection is not SQL injection (it may be worse).” National Cyber Security Centre. URL: https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection
-- Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). “Defeating Prompt Injections by Design.” arXiv:2503.18813. DOI: https://doi.org/10.48550/arXiv.2503.18813 URL: https://arxiv.org/abs/2503.18813
+- Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). “Defeating Prompt Injections by Design.” arXiv:2503.18813v2. DOI: https://doi.org/10.48550/arXiv.2503.18813 URL: https://arxiv.org/abs/2503.18813
 - Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., & Khabsa, M. (2023). “Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.” arXiv:2312.06674. DOI: https://doi.org/10.48550/arXiv.2312.06674 URL: https://arxiv.org/abs/2312.06674
 - OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt
 - OpenAI. (n.d.). “Prompt engineering.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompt-engineering
-- OpenAI. (n.d.). “Prompting.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompting
 - OWASP. (2024, November 17). “OWASP Top 10 for LLM Applications 2025.” OWASP GenAI Security Project. URL: https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/
 - Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). “The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.” arXiv:2302.06590. DOI: https://doi.org/10.48550/arXiv.2302.06590 URL: https://arxiv.org/abs/2302.06590
 - Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023). “Do Users Write More Insecure Code with AI Assistants?” *Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security*, 2785-2799. DOI: https://doi.org/10.1145/3576915.3623157
