@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bibliography Cache"
+  short_description: "Structure and validate cached references"
+  default_prompt: "Use $bibliography-cache to define or update the local reference cache."
