@@ -9,10 +9,7 @@
 
 ## Artifacts
 
-* `ABSTRACT.md`: レポートの要旨
-* `REFERENCES.md`: レポートの参考文献一覧
-* `TOC.md`: 目次
-* `sections/{n}.md`: 第{n}章
+成果物の構造は `report-artifacts` skill に従うこと。
 
 ## Writing Rules
 
