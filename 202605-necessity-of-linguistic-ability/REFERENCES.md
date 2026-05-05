@@ -21,13 +21,18 @@
 - Ericsson, K. A., & Kintsch, W. (1995). “Long-Term Working Memory.” *Psychological Review*, 102(2), 211-245. DOI: https://doi.org/10.1037/0033-295X.102.2.211
 - Flavell, J. H. (1979). “Metacognition and Cognitive Monitoring: A New Area of Cognitive-Developmental Inquiry.” *American Psychologist*, 34(10), 906-911. DOI: https://doi.org/10.1037/0003-066X.34.10.906
 - Flower, L., & Hayes, J. R. (1981). “A Cognitive Process Theory of Writing.” *College Composition and Communication*, 32(4), 365-387. DOI: https://doi.org/10.2307/356600
+- Hutchins, E. (1995). *Cognition in the Wild*. MIT Press. DOI: https://doi.org/10.7551/mitpress/1881.001.0001
 - Kahneman, D., & Klein, G. (2009). “Conditions for Intuitive Expertise: A Failure to Disagree.” *American Psychologist*, 64(6), 515-526. DOI: https://doi.org/10.1037/a0016755
+- Kirsh, D., & Maglio, P. (1994). “On Distinguishing Epistemic from Pragmatic Action.” *Cognitive Science*, 18(4), 513-549. DOI: https://doi.org/10.1207/s15516709cog1804_1
+- Larkin, J. H., & Simon, H. A. (1987). “Why a Diagram is (Sometimes) Worth Ten Thousand Words.” *Cognitive Science*, 11(1), 65-100. DOI: https://doi.org/10.1111/j.1551-6708.1987.tb00863.x
 - Levelt, W. J. M. (1989). *Speaking: From Intention to Articulation*. MIT Press. ISBN: 9780262121378
 - Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). “Putting Feelings Into Words: Affect Labeling Disrupts Amygdala Activity in Response to Affective Stimuli.” *Psychological Science*, 18(5), 421-428. DOI: https://doi.org/10.1111/j.1467-9280.2007.01916.x
 - Nisbett, R. E., & Wilson, T. D. (1977). “Telling More than We Can Know: Verbal Reports on Mental Processes.” *Psychological Review*, 84(3), 231-259. DOI: https://doi.org/10.1037/0033-295X.84.3.231
 - Schooler, J. W., & Engstler-Schooler, T. Y. (1990). “Verbal Overshadowing of Visual Memories: Some Things Are Better Left Unsaid.” *Cognitive Psychology*, 22(1), 36-71. DOI: https://doi.org/10.1016/0010-0285(90)90003-M
+- Scaife, M., & Rogers, Y. (1996). “External Cognition: How Do Graphical Representations Work?” *International Journal of Human-Computer Studies*, 45(2), 185-213. DOI: https://doi.org/10.1006/ijhc.1996.0048
 - Simon, H. A. (1973). “The Structure of Ill Structured Problems.” *Artificial Intelligence*, 4(3-4), 181-201. DOI: https://doi.org/10.1016/0004-3702(73)90011-8
 - Toulmin, S. E. (1958). *The Uses of Argument*. Cambridge University Press. ISBN: 9780521534833
+- Zhang, J., & Norman, D. A. (1994). “Representations in Distributed Cognitive Tasks.” *Cognitive Science*, 18(1), 87-122. DOI: https://doi.org/10.1207/s15516709cog1801_3
 
 ## 自然主義的意思決定
 
@@ -43,10 +48,16 @@
 - Fowler, M. (2006, October 31). “Ubiquitous Language.” URL: https://martinfowler.com/bliki/UbiquitousLanguage.html
 - ISO/IEC/IEEE 29148:2018. *Systems and Software Engineering -- Life Cycle Processes -- Requirements Engineering*. URL: https://www.iso.org/standard/72089.html
 - Knuth, D. E. (1984). “Literate Programming.” *The Computer Journal*, 27(2), 97-111. DOI: https://doi.org/10.1093/comjnl/27.2.97
+- Lunney, J., & Lueder, S. (2016). “Postmortem Culture: Learning from Failure.” In N. R. Murphy, B. Beyer, C. Jones, & J. Petoff (Eds.), *Site Reliability Engineering: How Google Runs Production Systems*. O’Reilly Media. URL: https://sre.google/sre-book/postmortem-culture/
 - Martin, R. C. (2008). *Clean Code: A Handbook of Agile Software Craftsmanship*. Prentice Hall. ISBN: 9780132350884
+- Nygard, M. (2011, November 15). “Documenting Architecture Decisions.” URL: https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions
 - Parnas, D. L. (1972). “On the Criteria To Be Used in Decomposing Systems into Modules.” *Communications of the ACM*, 15(12), 1053-1058. DOI: https://doi.org/10.1145/361598.361623
 - Schwaber, K., & Sutherland, J. (2020). *The Scrum Guide*. URL: https://scrumguides.org/scrum-guide.html
 - Wiegers, K., & Beatty, J. (2013). *Software Requirements* (3rd ed.). Microsoft Press. ISBN: 9780735679665
+
+## 事故分析・信頼性工学
+
+- Dekker, S. (2014). *The Field Guide to Understanding ‘Human Error’* (3rd ed.). CRC Press. ISBN: 9781472439055. URL: https://www.routledge.com/The-Field-Guide-to-Understanding-Human-Error/Dekker/p/book/9781472439055
 
 ## AI協業・プロンプトエンジニアリング
 
@@ -56,7 +67,7 @@
 - Chismon, D. (2025, December 8). “Prompt injection is not SQL injection (it may be worse).” National Cyber Security Centre. URL: https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection
 - Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). “Defeating Prompt Injections by Design.” arXiv:2503.18813v2. DOI: https://doi.org/10.48550/arXiv.2503.18813 URL: https://arxiv.org/abs/2503.18813
 - Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., & Khabsa, M. (2023). “Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.” arXiv:2312.06674. DOI: https://doi.org/10.48550/arXiv.2312.06674 URL: https://arxiv.org/abs/2312.06674
-- OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt
+- OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. アクセス時に「Updated: 13 days ago」と表示（2026年4月22日頃更新）。URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt
 - OpenAI. (n.d.). “Prompt engineering.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompt-engineering
 - OWASP. (2024, November 17). “OWASP Top 10 for LLM Applications 2025.” OWASP GenAI Security Project. URL: https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/
 - Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). “The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.” arXiv:2302.06590. DOI: https://doi.org/10.48550/arXiv.2302.06590 URL: https://arxiv.org/abs/2302.06590
