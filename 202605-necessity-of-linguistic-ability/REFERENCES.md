@@ -1,8 +1,8 @@
-# 参考文献一覧
+## 参考文献
 
 アクセス日は、特に断りのない限り2026年5月5日である。ウェブ記事の公開日・更新日は、公開ページで確認できる範囲を記す。
 
-## ビジネス言説・批判記事
+### ビジネス言説・批判記事
 
 - 木暮太一（2025）「〖要注意〗『言語化ハラスメント』が職場で急増中。部下を黙らせる“一言”とは？」『ダイヤモンド・オンライン』2025年10月18日 6:00。URL: https://diamond.jp/articles/-/374933
 - PHP人材開発（2025）「若手社員の言語化トレーニング。能力向上で仕事の質を高める」2025年3月13日更新。URL: https://hrd.php.co.jp/mid-level/articles/post-1271.php
@@ -11,7 +11,7 @@
 - 文化放送（2026）「今、何でもかんでも言語化する時代！ 『言語化ブーム』の光と影を指摘する！」『文化放送』2026年3月4日。URL: https://www.joqr.co.jp/qr/article/170981/
 - 株式会社ソフィア（2025）「言語化とは何か？重要性とビジネスへの応用、鍛える方法まで徹底解説」2025年7月15日更新。URL: https://www.sofia-inc.com/blog/17090.html
 
-## 心理学・認知科学
+### 心理学・認知科学
 
 - Baddeley, A. D., & Hitch, G. J. (1974). “Working Memory.” In G. H. Bower (Ed.), *The Psychology of Learning and Motivation*, 8, 47-89. DOI: https://doi.org/10.1016/S0079-7421(08)60452-1
 - Carroll, J. B. (1993). *Human Cognitive Abilities: A Survey of Factor-Analytic Studies*. Cambridge University Press. ISBN: 9780521382755
@@ -34,11 +34,11 @@
 - Toulmin, S. E. (1958). *The Uses of Argument*. Cambridge University Press. ISBN: 9780521534833
 - Zhang, J., & Norman, D. A. (1994). “Representations in Distributed Cognitive Tasks.” *Cognitive Science*, 18(1), 87-122. DOI: https://doi.org/10.1207/s15516709cog1801_3
 
-## 自然主義的意思決定
+### 自然主義的意思決定
 
 - Klein, G. A., Calderwood, R., & Clinton-Cirocco, A. (1986). “Rapid Decision Making on the Fire Ground.” *Proceedings of the Human Factors Society Annual Meeting*, 30(6), 576-580. DOI: https://doi.org/10.1177/154193128603000616
 
-## ソフトウェア工学
+### ソフトウェア工学
 
 - Abelson, H., Sussman, G. J., & Sussman, J. (1985/1996). *Structure and Interpretation of Computer Programs*. MIT Press. URL: https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/
 - Brooks, F. P. (1975/1995). *The Mythical Man-Month: Essays on Software Engineering*. Addison-Wesley. ISBN: 9780201835953
@@ -46,7 +46,7 @@
 - Evans, E. (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley. ISBN: 9780321125217
 - Fowler, M. (1999/2018). *Refactoring: Improving the Design of Existing Code*. Addison-Wesley. ISBN: 9780134757599
 - Fowler, M. (2006, October 31). “Ubiquitous Language.” URL: https://martinfowler.com/bliki/UbiquitousLanguage.html
-- ISO/IEC/IEEE 29148:2018. *Systems and Software Engineering -- Life Cycle Processes -- Requirements Engineering*. URL: https://www.iso.org/standard/72089.html
+- ISO/IEC/IEEE 29148:2018. *Systems and Software Engineering -- Life Cycle Processes -- Requirements Engineering*. Edition 2, 2018-11. ISO公式ページでは、2024年に確認済みで現行版とされる一方、2026年5月11日確認時点ではステージ90.92「International Standard to be revised」であり、後継のISO/IEC/IEEE CD 29148が開発中である。URL: https://www.iso.org/standard/72089.html
 - Knuth, D. E. (1984). “Literate Programming.” *The Computer Journal*, 27(2), 97-111. DOI: https://doi.org/10.1093/comjnl/27.2.97
 - Lunney, J., & Lueder, S. (2016). “Postmortem Culture: Learning from Failure.” In N. R. Murphy, B. Beyer, C. Jones, & J. Petoff (Eds.), *Site Reliability Engineering: How Google Runs Production Systems*. O’Reilly Media. URL: https://sre.google/sre-book/postmortem-culture/
 - Martin, R. C. (2008). *Clean Code: A Handbook of Agile Software Craftsmanship*. Prentice Hall. ISBN: 9780132350884
@@ -55,11 +55,13 @@
 - Schwaber, K., & Sutherland, J. (2020). *The Scrum Guide*. URL: https://scrumguides.org/scrum-guide.html
 - Wiegers, K., & Beatty, J. (2013). *Software Requirements* (3rd ed.). Microsoft Press. ISBN: 9780735679665
 
-## 事故分析・信頼性工学
+### 事故分析・信頼性工学
 
 - Dekker, S. (2014). *The Field Guide to Understanding ‘Human Error’* (3rd ed.). CRC Press. ISBN: 9781472439055. URL: https://www.routledge.com/The-Field-Guide-to-Understanding-Human-Error/Dekker/p/book/9781472439055
 
-## AI協業・プロンプトエンジニアリング
+### AI協業・プロンプトエンジニアリング
+
+この節には、査読済み論文・会議論文、arXivプレプリント、標準化団体・公的機関・企業の公式または実務ガイドが含まれる。本文では、各資料の性格に応じて、経験的知見、理論的提案、実務上の指針を区別して扱う。
 
 - Barke, S., James, M. B., & Polikarpova, N. (2023). “Grounded Copilot: How Programmers Interact with Code-Generating Models.” *Proceedings of the ACM on Programming Languages*, 7(OOPSLA1), 85-111. DOI: https://doi.org/10.1145/3586030
 - Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.” arXiv:2507.09089v2. DOI: https://doi.org/10.48550/arXiv.2507.09089 URL: https://arxiv.org/abs/2507.09089
@@ -67,9 +69,9 @@
 - Chismon, D. (2025, December 8). “Prompt injection is not SQL injection (it may be worse).” National Cyber Security Centre. URL: https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection
 - Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). “Defeating Prompt Injections by Design.” arXiv:2503.18813v2. DOI: https://doi.org/10.48550/arXiv.2503.18813 URL: https://arxiv.org/abs/2503.18813
 - Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., Tontchev, M., Hu, Q., Fuller, B., Testuggine, D., & Khabsa, M. (2023). “Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations.” arXiv:2312.06674. DOI: https://doi.org/10.48550/arXiv.2312.06674 URL: https://arxiv.org/abs/2312.06674
-- OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. アクセス時に「Updated: 13 days ago」と表示（2026年4月22日頃更新）。URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt
-- OpenAI. (n.d.). “Prompt engineering.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompt-engineering
-- OWASP. (2024, November 17). “OWASP Top 10 for LLM Applications 2025.” OWASP GenAI Security Project. URL: https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/
+- OpenAI. (n.d.). “Prompt engineering best practices for ChatGPT.” OpenAI Help Center. URL: https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt（2026年5月11日確認。ページ上の更新日は相対表示）
+- OpenAI. (n.d.). “Prompt engineering.” OpenAI API Docs. URL: https://developers.openai.com/api/docs/guides/prompt-engineering（2026年5月11日確認）
+- OWASP. (2024, November 17). “OWASP Top 10 for LLM Applications 2025.” OWASP GenAI Security Project. Top 10一覧ページ: https://genai.owasp.org/llm-top-10/ 2025版ガイド: https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/（2026年5月11日確認）
 - Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). “The Impact of AI on Developer Productivity: Evidence from GitHub Copilot.” arXiv:2302.06590. DOI: https://doi.org/10.48550/arXiv.2302.06590 URL: https://arxiv.org/abs/2302.06590
 - Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023). “Do Users Write More Insecure Code with AI Assistants?” *Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security*, 2785-2799. DOI: https://doi.org/10.1145/3576915.3623157
 - Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C., & Cohen, J. (2023). “NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails.” arXiv:2310.10501. DOI: https://doi.org/10.48550/arXiv.2310.10501 URL: https://arxiv.org/abs/2310.10501
@@ -79,7 +81,7 @@
 - White, J., Hays, S., Fu, Q., Spencer-Smith, J., & Schmidt, D. C. (2023b). “ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design.” arXiv:2303.07839. DOI: https://doi.org/10.48550/arXiv.2303.07839 URL: https://arxiv.org/abs/2303.07839
 - Zamfirescu-Pereira, J. D., Wong, R. Y., Hartmann, B., & Yang, Q. (2023). “Why Johnny Can’t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts.” *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems*, Article 437, 1-21. DOI: https://doi.org/10.1145/3544548.3581388
 
-## 組織学習・教育
+### 組織学習・教育
 
 - Argyris, C., & Schön, D. A. (1978). *Organizational Learning: A Theory of Action Perspective*. Addison-Wesley. ISBN: 9780201001747
 - Detert, J. R., & Burris, E. R. (2007). “Leadership Behavior and Employee Voice: Is the Door Really Open?” *Academy of Management Journal*, 50(4), 869-884. DOI: https://doi.org/10.5465/amj.2007.26279183

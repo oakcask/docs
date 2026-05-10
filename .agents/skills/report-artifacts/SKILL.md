@@ -20,5 +20,5 @@ Create and maintain these files at the project root:
 
 - Keep source notes and drafts under `src/`; do not treat them as final artifacts.
 - Write each chapter artifact in `sections/{n}.md`.
-- Start each chapter artifact with a level-2 heading (`##`) unless the project-specific instructions say otherwise.
+- Start each artifact with a level-2 heading (`##`) unless the project-specific instructions say otherwise.
 - Preserve project-specific additions in `AGENTS.md`; this skill only standardizes the shared deliverable structure.

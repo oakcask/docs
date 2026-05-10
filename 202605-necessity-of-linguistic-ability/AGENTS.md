@@ -4,12 +4,17 @@
 
 * `src/{n}.md`: レポートに含めるべき内容のサマリ。第{n}章
 * `src/ABSTRACT.md`: レポートの要旨 案
+* `src/APPENDIX.md`: 付録に含めるべき内容のサマリ
 * `src/REFERENCES.md`: このレポートを書くにあたっての参考文献
 * `REVIEW.md`: レビュー結果
 
 ## Artifacts
 
 成果物の構造は `report-artifacts` skill に従うこと。
+
+このプロジェクトでは、共通の成果物に加えて次のファイルを付録として扱う。
+
+* `APPENDIX.md`: 付録
 
 ## Writing Rules
 

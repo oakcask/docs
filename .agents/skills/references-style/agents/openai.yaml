@@ -1,0 +1,4 @@
+interface:
+  display_name: "References Style"
+  short_description: "Standardize report reference lists"
+  default_prompt: "Use $references-style to standardize a report REFERENCES.md file."
