@@ -57,8 +57,17 @@
 ## 組織学習・教育
 
 - Argyris, C., & Schön, D. A. (1978). *Organizational Learning: A Theory of Action Perspective*. Addison-Wesley.
+- Augner, T., Schermuly, C. C., & Jungmann, F. (2024). “Working Out Loud: an intervention study to test an agile learning method.” *Journal of Workplace Learning*, 36(1), 43–58. DOI: https://doi.org/10.1108/JWL-04-2023-0067.
 - Bransford, J. D., Brown, A. L., & Cocking, R. R. eds. (2000). *How People Learn: Brain, Mind, Experience, and School*. National Academies Press.
+- Brown, J. S., Collins, A., & Duguid, P. (1989). “Situated Cognition and the Culture of Learning.” *Educational Researcher*, 18(1), 32–42. DOI: https://doi.org/10.3102/0013189X018001032.
+- Collins, A., Brown, J. S., & Newman, S. E. (1989). “Cognitive Apprenticeship: Teaching the Crafts of Reading, Writing, and Mathematics.” In L. B. Resnick (ed.), *Knowing, Learning, and Instruction: Essays in Honor of Robert Glaser*, 453–494. Lawrence Erlbaum Associates.
 - Edmondson, A. C. (1999). “Psychological Safety and Learning Behavior in Work Teams.” *Administrative Science Quarterly*, 44(2), 350–383.
 - Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). “The Role of Deliberate Practice in the Acquisition of Expert Performance.” *Psychological Review*, 100(3), 363–406.
+- Land, S. M., & Zembal-Saul, C. (2003). “Scaffolding Reflection and Articulation of Scientific Explanations in a Data-Rich, Project-Based Learning Environment: An Investigation of Progress Portfolio.” *Educational Technology Research and Development*, 51(4), 65–84. DOI: https://doi.org/10.1007/BF02504544.
+- Margaryan, A., Boursinou, E., Lukic, D., & de Zwart, H. (2015). “Narrating Your Work: an approach to supporting knowledge sharing in virtual teams.” *Knowledge Management Research & Practice*, 13(4), 391–400. DOI: https://doi.org/10.1057/kmrp.2013.58.
 - Nonaka, I., & Takeuchi, H. (1995). *The Knowledge-Creating Company*. Oxford University Press.
+- Palincsar, A. S., & Brown, A. L. (1984). “Reciprocal Teaching of Comprehension-Fostering and Comprehension-Monitoring Activities.” *Cognition and Instruction*, 1(2), 117–175. DOI: https://doi.org/10.1207/s1532690xci0102_1.
+- Ritchhart, R., & Perkins, D. (2008). “Making Thinking Visible.” *Educational Leadership*, 65(5), 57–61.
+- Salowski, C. (2022). “Working Out Loud (WOL): Die Methode für sichtbaren Fortschritt.” In *FrauenStärken – Mit Working Out Loud die berufliche und gesellschaftliche Position von Frauen fördern*, 9–37. Springer. DOI: https://doi.org/10.1007/978-3-662-64635-9_2.
 - Vygotsky, L. S. (1934/1962). *Thought and Language*.
+- Williams, B. (2010). “When will we Work Out Loud? Soon!” *TheBrycesWrite*. URL: https://thebryceswrite.com/2010/11/29/when-will-we-work-out-loud-soon/.
