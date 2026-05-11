@@ -4,6 +4,8 @@
 
 ### ビジネス言説・批判記事
 
+この節の資料は、職場・メディア上の言語化言説と批判の所在を確認するために用い、言語化機会の増減を測定する実証研究としては扱わない。
+
 - 木暮太一（2025）「〖要注意〗『言語化ハラスメント』が職場で急増中。部下を黙らせる“一言”とは？」『ダイヤモンド・オンライン』2025年10月18日 6:00。URL: https://diamond.jp/articles/-/374933
 - PHP人材開発（2025）「若手社員の言語化トレーニング。能力向上で仕事の質を高める」2025年3月13日更新。URL: https://hrd.php.co.jp/mid-level/articles/post-1271.php
 - パーソルクロステクノロジー（2021）「ビジネスチャットの意思疎通、どうしてすれ違う？ 精度の高い言語化は、文章を書く前からはじまる」『i:Engineer』2021年12月16日。URL: https://staff.persol-xtech.co.jp/i-engineer/human/gengo
@@ -84,14 +86,22 @@
 ### 組織学習・教育
 
 - Argyris, C., & Schön, D. A. (1978). *Organizational Learning: A Theory of Action Perspective*. Addison-Wesley. ISBN: 9780201001747
+- Augner, T., Schermuly, C. C., & Jungmann, F. (2024). “Working Out Loud: an intervention study to test an agile learning method.” *Journal of Workplace Learning*, 36(1), 43-58. DOI: https://doi.org/10.1108/JWL-04-2023-0067
+- Brown, J. S., Collins, A., & Duguid, P. (1989). “Situated Cognition and the Culture of Learning.” *Educational Researcher*, 18(1), 32-42. DOI: https://doi.org/10.3102/0013189X018001032
+- Collins, A., Brown, J. S., & Newman, S. E. (1989). “Cognitive Apprenticeship: Teaching the Crafts of Reading, Writing, and Mathematics.” In L. B. Resnick (ed.), *Knowing, Learning, and Instruction: Essays in Honor of Robert Glaser*, 453-494. Lawrence Erlbaum Associates.
 - Detert, J. R., & Burris, E. R. (2007). “Leadership Behavior and Employee Voice: Is the Door Really Open?” *Academy of Management Journal*, 50(4), 869-884. DOI: https://doi.org/10.5465/amj.2007.26279183
 - Detert, J. R., Burris, E. R., Harrison, D. A., & Martin, S. R. (2013). “Voice Flows to and around Leaders: Understanding When Units Are Helped or Hurt by Employee Voice.” *Administrative Science Quarterly*, 58(4), 624-668. DOI: https://doi.org/10.1177/0001839213510151
 - Edmondson, A. C. (1999). “Psychological Safety and Learning Behavior in Work Teams.” *Administrative Science Quarterly*, 44(2), 350-383. DOI: https://doi.org/10.2307/2666999
 - Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). “The Role of Deliberate Practice in the Acquisition of Expert Performance.” *Psychological Review*, 100(3), 363-406. DOI: https://doi.org/10.1037/0033-295X.100.3.363
 - GitLab. (n.d.). “How to embrace asynchronous communication for remote work.” *The GitLab Handbook*. URL: https://handbook.gitlab.com/handbook/company/culture/all-remote/asynchronous/
+- Land, S. M., & Zembal-Saul, C. (2003). “Scaffolding Reflection and Articulation of Scientific Explanations in a Data-Rich, Project-Based Learning Environment: An Investigation of Progress Portfolio.” *Educational Technology Research and Development*, 51(4), 65-84. DOI: https://doi.org/10.1007/BF02504544
 - 厚生労働省（n.d.-a）「パワーハラスメントとは」『あかるい職場応援団』。URL: https://www.no-harassment.mhlw.go.jp/foundation/harassment_list/power-hara/
 - 厚生労働省（n.d.-b）「テレワーク」『確かめよう労働条件』。URL: https://www.check-roudou.mhlw.go.jp/study/roudousya_telework.html
+- Margaryan, A., Boursinou, E., Lukic, D., & de Zwart, H. (2015). “Narrating Your Work: an approach to supporting knowledge sharing in virtual teams.” *Knowledge Management Research & Practice*, 13(4), 391-400. DOI: https://doi.org/10.1057/kmrp.2013.58
 - Morrison, E. W. (2014). “Employee Voice and Silence.” *Annual Review of Organizational Psychology and Organizational Behavior*, 1, 173-197. DOI: https://doi.org/10.1146/annurev-orgpsych-031413-091328
 - Nonaka, I., & Takeuchi, H. (1995). *The Knowledge-Creating Company: How Japanese Companies Create the Dynamics of Innovation*. Oxford University Press. ISBN: 9780195092691
+- Palincsar, A. S., & Brown, A. L. (1984). “Reciprocal Teaching of Comprehension-Fostering and Comprehension-Monitoring Activities.” *Cognition and Instruction*, 1(2), 117-175. DOI: https://doi.org/10.1207/s1532690xci0102_1
+- Ritchhart, R., & Perkins, D. (2008). “Making Thinking Visible.” *Educational Leadership*, 65(5), 57-61.
 - Vygotsky, L. S. (1934/1962). *Thought and Language*. MIT Press.
+- Williams, B. (2010, November 29). “When will we Work Out Loud? Soon!” *TheBrycesWrite*. URL: https://thebryceswrite.com/2010/11/29/when-will-we-work-out-loud-soon/（2026年5月11日確認）
 - Wood, D., Bruner, J. S., & Ross, G. (1976). “The Role of Tutoring in Problem Solving.” *Journal of Child Psychology and Psychiatry*, 17(2), 89-100. DOI: https://doi.org/10.1111/j.1469-7610.1976.tb00381.x
