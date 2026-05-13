@@ -99,10 +99,11 @@ scholarly-default: 180 days
 doi-metadata: 365 days
 arxiv: 30 days
 book: 365 days
-web-page: 30 days
+web-page: 90 days
+stable-official-page: 180 days
 news: 7 days
 law-policy-standard: 7 days
-software-docs: 14 days
+software-docs: 30 days
 current-request: 0 days
 ```
 
