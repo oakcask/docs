@@ -15,6 +15,7 @@ Create and maintain these files at the project root:
 - `REFERENCES.md`: References (ja: 参考文献)
 - `TOC.md`: Table of Contents (ja: 目次)
 - `sections/{n}.md`: Section {n} (ja: 第{n}章)
+- `metadata.json`: Metadata
 
 ## Conventions
 
@@ -22,3 +23,15 @@ Create and maintain these files at the project root:
 - Write each chapter artifact in `sections/{n}.md`.
 - Start each artifact with a level-2 heading (`##`) unless the project-specific instructions say otherwise.
 - Preserve project-specific additions in `AGENTS.md`; this skill only standardizes the shared deliverable structure.
+
+## Metadata
+
+Generate document's metadata as JSON:
+
+```json
+{
+  "title": ...
+}
+```
+
+* `title`: The report title. Use same language as the report writing rule.

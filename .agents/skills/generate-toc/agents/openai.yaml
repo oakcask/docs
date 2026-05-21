@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate TOC"
+  short_description: "Generate Japanese report TOC.md files"
+  default_prompt: "Use $generate-toc to generate or refresh TOC.md for a report project."
