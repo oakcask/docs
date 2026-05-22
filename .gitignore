@@ -1,3 +1,4 @@
 .bibliography-cache
 .cache
+dist/
 index.html

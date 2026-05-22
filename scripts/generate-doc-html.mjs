@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const USAGE = "Usage: node scripts/generate-doc-html.mjs <directory>";
+const USAGE = "Usage: node scripts/generate-doc-html.mjs <directory> [output-html]";
 
 function fail(message) {
   throw new Error(message);
@@ -122,11 +122,11 @@ export function inputFiles(directoryPath) {
   return files;
 }
 
-export function pandocArgs(directoryPath) {
+export function pandocArgs(directoryPath, outputPath = "index.html") {
   const metadata = readMetadata(directoryPath);
   return [
     "-o",
-    "index.html",
+    outputPath,
     "--from=gfm",
     "--standalone",
     "--toc",
@@ -136,18 +136,19 @@ export function pandocArgs(directoryPath) {
 }
 
 export function main(args) {
-  if (args.length !== 1 || args[0] === "-h" || args[0] === "--help") {
+  if (args.length < 1 || args.length > 2 || args[0] === "-h" || args[0] === "--help") {
     console.error(USAGE);
     return args.length === 1 ? 0 : 1;
   }
 
   const directoryPath = path.resolve(args[0]);
+  const outputPath = args[1] ? path.resolve(args[1]) : "index.html";
 
   if (!existsAsDirectory(directoryPath)) {
     fail(`Not a directory: ${args[0]}`);
   }
 
-  const result = spawnSync("pandoc", pandocArgs(directoryPath), {
+  const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath), {
     cwd: directoryPath,
     stdio: "inherit",
   });

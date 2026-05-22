@@ -25,8 +25,10 @@ function writeSection(directoryPath, fileName, content) {
   fs.writeFileSync(path.join(directoryPath, "sections", fileName), content);
 }
 
-function runScript(directoryPath) {
-  return spawnSync(process.execPath, [scriptPath, directoryPath], {
+function runScript(directoryPath, outputPath) {
+  const args = outputPath ? [scriptPath, directoryPath, outputPath] : [scriptPath, directoryPath];
+
+  return spawnSync(process.execPath, args, {
     encoding: "utf8",
   });
 }
@@ -64,6 +66,10 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "APPENDIX.md",
     "REFERENCES.md",
   ]);
+  assert.deepEqual(pandocArgs(directoryPath, path.join("dist", "index.html")).slice(0, 2), [
+    "-o",
+    path.join("dist", "index.html"),
+  ]);
 });
 
 test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t) => {
@@ -81,6 +87,21 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /^<!DOCTYPE html>/);
   assert.match(html, /<title>Fixture Title<\/title>/);
   assert.match(html, /Section body\./);
+});
+
+test("generates standalone HTML to an explicit output path", { skip: !hasPandoc }, (t) => {
+  const directoryPath = makeFixture(t);
+  const outputPath = path.join(directoryPath, "dist", "doc", "index.html");
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
+  writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
+
+  const result = runScript(directoryPath, outputPath);
+
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(fs.readFileSync(outputPath, "utf8"), /Section body\./);
 });
 
 test("fails when metadata.json is missing", (t) => {
