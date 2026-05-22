@@ -2,8 +2,9 @@ PROJECT_AGENTS_MD = $(wildcard */AGENTS.md)
 PROJECT_METADATA = $(wildcard */metadata.json)
 DOC_DIRS = $(patsubst %/metadata.json,%,$(PROJECT_METADATA))
 SKILLS_SYMLINKS = $(patsubst %/AGENTS.md,%/.agents/skills,$(PROJECT_AGENTS_MD))
-INDEX_HTML = $(patsubst %,%/index.html,$(DOC_DIRS))
-DOCS_HTML = index.html
+DIST_DIR = dist
+INDEX_HTML = $(patsubst %,$(DIST_DIR)/%/index.html,$(DOC_DIRS))
+DOCS_HTML = $(DIST_DIR)/index.html
 
 define DOC_INPUTS
 $1/metadata.json \
@@ -16,8 +17,9 @@ scripts/generate-doc-html.mjs
 endef
 
 define DOC_RULE
-$1/index.html: $$(call DOC_INPUTS,$1)
-	node scripts/generate-doc-html.mjs $1
+$(DIST_DIR)/$1/index.html: $$(call DOC_INPUTS,$1)
+	mkdir -p $$(dir $$@)
+	node scripts/generate-doc-html.mjs $1 $$@
 endef
 
 .PHONY: setup docs
@@ -25,6 +27,7 @@ setup: $(SKILLS_SYMLINKS)
 docs: $(INDEX_HTML) $(DOCS_HTML)
 
 $(DOCS_HTML): $(PROJECT_METADATA) $(INDEX_HTML) scripts/generate-docs-index.mjs
+	mkdir -p $(@D)
 	node scripts/generate-docs-index.mjs $(DOC_DIRS) > $@
 
 $(foreach dir,$(DOC_DIRS),$(eval $(call DOC_RULE,$(dir))))
