@@ -18,9 +18,9 @@ Use this skill when working on a report project's `REFERENCES.md`. Pair it with 
 
 ### 分野・用途
 
-- 著者（年）「論文・記事タイトル」『媒体名』巻(号), 開始-終了頁。DOI: https://doi.org/...
+- 著者（年）「論文・記事タイトル」『媒体名』巻(号), 開始-終了頁。DOI: <https://doi.org/...>
 - 著者（年）『書籍タイトル』出版社。ISBN: ...
-- 組織名（年またはn.d.）「ページタイトル」『サイト名』参照日。URL: https://...
+- 組織名（年またはn.d.）「ページタイトル」『サイト名』参照日。URL: <https://...>
 ```
 
 Use `###` for top-level categories. Use `####` only when a large category needs stable subgroups. Keep every reference as one bullet.
@@ -51,8 +51,10 @@ Use `n.d.` only when no publication year can be established. Do not invent missi
 - Write Japanese author/organization names as `著者（年）`; write English-language scholarly sources as `Author, A. A., & Author, B. B. (Year).` unless the surrounding file already uses a consistent English bibliographic style.
 - Use Japanese corner brackets for Japanese titles: 「記事・論文」 and 『書籍・媒体』.
 - Use italic Markdown for English book, journal, proceedings, and report titles when following English style.
-- Render DOI values as `DOI: https://doi.org/...`.
-- Render web links as `URL: https://...`.
+- In artifact `REFERENCES.md` files, render DOI and web links as Markdown autolinks wrapped with `<` and `>`.
+- Render DOI values as `DOI: <https://doi.org/...>`.
+- Render web links as `URL: <https://...>`.
+- When converting a Markdown title link such as `[Title](https://...)`, keep the title as plain bibliographic text and put the URL separately as `URL: <https://...>` or `DOI: <https://doi.org/...>`.
 - Render ISBN values as `ISBN: ...`.
 - Use half-width hyphens for numeric page ranges, for example `47-89`.
 - End Japanese-form entries with `。`. Keep punctuation consistent inside the file.
