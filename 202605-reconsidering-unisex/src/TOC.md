@@ -2,10 +2,10 @@
 ## 章構成
 
 1. 序論：ユニセックスを「自由」の問題として捉え直す
-2. 理論枠組み：二つの記号戦略――Expressive（Code-Switching）と Neutralizing（Code-Diffusing）
+2. 理論枠組み：二つの記号戦略――Code-Switching と Code-Diffusing
 3. ファッション史：性のコードは移動する
-4. Expressive（Code-Switching）：性別コードを再配置する実践
-5. Neutralizing（Code-Diffusing）：性別コードを希釈する実践
+4. Code-Switching：性別コードを再配置する実践
+5. Code-Diffusing：性別コードを希釈する実践
 6. 身体工学とフィット：自由は身体に制約される
 7. 被服心理学：衣服は自己認識・安心感・身体感覚にどう作用するか
 8. 制度と市場：ドレスコード、法、売場、サイズ表が自由を制約する
