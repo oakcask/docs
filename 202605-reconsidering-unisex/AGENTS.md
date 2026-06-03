@@ -7,7 +7,7 @@
 * `src/ABSTRACT.md`: レポートの要旨案
 * `src/REFERENCES.md`: このレポートを書くにあたっての参考文献
 * `src/SUBCULTURE_REPORT.md`: 日本のサブカルチャーにおける実例
-* `REVIEW.md`: レビュー結果
+* `COMMENTS.md`: レビュー結果
 
 ## Artifacts
 
