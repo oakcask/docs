@@ -130,6 +130,7 @@ export function pandocArgs(directoryPath, outputPath = "index.html") {
     "--from=gfm",
     "--standalone",
     "--toc",
+    "--wrap=none",
     ...toMetadataArgs(metadata),
     ...inputFiles(directoryPath),
   ];
