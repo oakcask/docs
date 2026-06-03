@@ -6,7 +6,7 @@
 * `src/ABSTRACT.md`: レポートの要旨 案
 * `src/APPENDIX.md`: 付録に含めるべき内容のサマリ
 * `src/REFERENCES.md`: このレポートを書くにあたっての参考文献
-* `REVIEW.md`: レビュー結果
+* `COMMENTS.md`: レビュー結果
 
 ## Artifacts
 
