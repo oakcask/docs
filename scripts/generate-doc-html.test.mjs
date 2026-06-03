@@ -58,6 +58,7 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "--from=gfm",
     "--standalone",
     "--toc",
+    "--wrap=none",
     "--metadata",
     "title=Fixture Title",
     "ABSTRACT.md",
