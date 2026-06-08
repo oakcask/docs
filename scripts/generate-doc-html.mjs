@@ -2,6 +2,7 @@
 
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -76,6 +77,29 @@ export function toMetadataArgs(metadata) {
   return args;
 }
 
+export function escapeHtmlAttribute(value) {
+  return String(value).replace(/[&<>"']/g, (char) => {
+    switch (char) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#39;";
+      default:
+        return char;
+    }
+  });
+}
+
+export function ogpHeaderHtml(metadata) {
+  return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">\n`;
+}
+
 function sectionNumber(fileName) {
   const match = fileName.match(/^(\d+(?:\.\d+)?)\.md$/);
   return match ? Number(match[1]) : null;
@@ -122,18 +146,23 @@ export function inputFiles(directoryPath) {
   return files;
 }
 
-export function pandocArgs(directoryPath, outputPath = "index.html") {
+export function pandocArgs(directoryPath, outputPath = "index.html", options = {}) {
   const metadata = readMetadata(directoryPath);
-  return [
+  const args = [
     "-o",
     outputPath,
     "--from=gfm",
     "--standalone",
     "--toc",
     "--wrap=none",
-    ...toMetadataArgs(metadata),
-    ...inputFiles(directoryPath),
   ];
+
+  if (options.includeInHeader) {
+    args.push("--include-in-header", options.includeInHeader);
+  }
+
+  args.push(...toMetadataArgs(metadata), ...inputFiles(directoryPath));
+  return args;
 }
 
 export function main(args) {
@@ -149,16 +178,26 @@ export function main(args) {
     fail(`Not a directory: ${args[0]}`);
   }
 
-  const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath), {
-    cwd: directoryPath,
-    stdio: "inherit",
-  });
+  const metadata = readMetadata(directoryPath);
+  const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "generate-doc-html-"));
+  const ogpHeaderPath = path.join(temporaryDirectory, "ogp.html");
 
-  if (result.error) {
-    fail(`Failed to run pandoc: ${result.error.message}`);
+  try {
+    fs.writeFileSync(ogpHeaderPath, ogpHeaderHtml(metadata));
+
+    const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: ogpHeaderPath }), {
+      cwd: directoryPath,
+      stdio: "inherit",
+    });
+
+    if (result.error) {
+      fail(`Failed to run pandoc: ${result.error.message}`);
+    }
+
+    return result.status ?? 1;
+  } finally {
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   }
-
-  return result.status ?? 1;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
