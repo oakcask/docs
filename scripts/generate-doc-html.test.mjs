@@ -5,7 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { inputFiles, pandocArgs, readMetadata } from "./generate-doc-html.mjs";
+import { inputFiles, ogpHeaderHtml, pandocArgs, readMetadata } from "./generate-doc-html.mjs";
 
 const scriptPath = fileURLToPath(new URL("generate-doc-html.mjs", import.meta.url));
 const hasPandoc = spawnSync("pandoc", ["--version"], { encoding: "utf8" }).status === 0;
@@ -87,6 +87,7 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   const html = fs.readFileSync(path.join(directoryPath, "index.html"), "utf8");
   assert.match(html, /^<!DOCTYPE html>/);
   assert.match(html, /<title>Fixture Title<\/title>/);
+  assert.match(html, /<meta property="og:title" content="Fixture Title">/);
   assert.match(html, /Section body\./);
 });
 
@@ -118,4 +119,11 @@ test("fails when metadata title is blank", (t) => {
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
 
   assert.throws(() => readMetadata(directoryPath), /non-empty string title/);
+});
+
+test("escapes OGP title for HTML attributes", () => {
+  assert.equal(
+    ogpHeaderHtml({ title: `A&B <"quoted">'` }),
+    `<meta property="og:title" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">\n`,
+  );
 });
