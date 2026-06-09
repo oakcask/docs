@@ -96,8 +96,19 @@ export function escapeHtmlAttribute(value) {
   });
 }
 
-export function ogpHeaderHtml(metadata) {
-  return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">\n`;
+export function ghPagesHeaderHtml(metadata) {
+  return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">
+<style>
+  html {
+    font-size: 16pt;
+  }
+  @media print {
+    html {
+      font-size: 12pt;
+    }
+  }
+</style>
+`;
 }
 
 function sectionNumber(fileName) {
@@ -180,12 +191,12 @@ export function main(args) {
 
   const metadata = readMetadata(directoryPath);
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "generate-doc-html-"));
-  const ogpHeaderPath = path.join(temporaryDirectory, "ogp.html");
+  const headerPath = path.join(temporaryDirectory, "header.html");
 
   try {
-    fs.writeFileSync(ogpHeaderPath, ogpHeaderHtml(metadata));
+    fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata));
 
-    const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: ogpHeaderPath }), {
+    const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath }), {
       cwd: directoryPath,
       stdio: "inherit",
     });
