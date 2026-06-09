@@ -5,7 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { inputFiles, ogpHeaderHtml, pandocArgs, readMetadata } from "./generate-doc-html.mjs";
+import { ghPagesHeaderHtml, inputFiles, pandocArgs, readMetadata } from "./generate-doc-html.mjs";
 
 const scriptPath = fileURLToPath(new URL("generate-doc-html.mjs", import.meta.url));
 const hasPandoc = spawnSync("pandoc", ["--version"], { encoding: "utf8" }).status === 0;
@@ -88,6 +88,8 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /^<!DOCTYPE html>/);
   assert.match(html, /<title>Fixture Title<\/title>/);
   assert.match(html, /<meta property="og:title" content="Fixture Title">/);
+  assert.match(html, /html \{\n\s+font-size: 16pt;\n\s+\}/);
+  assert.match(html, /@media print \{\n\s+html \{\n\s+font-size: 12pt;\n\s+\}/);
   assert.match(html, /Section body\./);
 });
 
@@ -123,7 +125,12 @@ test("fails when metadata title is blank", (t) => {
 
 test("escapes OGP title for HTML attributes", () => {
   assert.equal(
-    ogpHeaderHtml({ title: `A&B <"quoted">'` }),
-    `<meta property="og:title" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">\n`,
+    ghPagesHeaderHtml({ title: `A&B <"quoted">'` }).split("\n")[0],
+    `<meta property="og:title" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">`,
   );
+});
+
+test("generates gh-pages header CSS", () => {
+  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 16pt;/);
+  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 12pt;/);
 });
