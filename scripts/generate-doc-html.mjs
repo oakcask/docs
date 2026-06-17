@@ -157,6 +157,47 @@ export function inputFiles(directoryPath) {
   return files;
 }
 
+export function footnoteIdentifiers(markdown) {
+  const identifiers = [];
+  const pattern = /\[\^([^\]\s]+)\]/g;
+  let match;
+
+  while ((match = pattern.exec(markdown)) !== null) {
+    identifiers.push(match[1]);
+  }
+
+  return identifiers;
+}
+
+export function validateFootnoteIdentifiers(directoryPath, files = inputFiles(directoryPath)) {
+  const firstSeenByIdentifier = new Map();
+  const errors = [];
+
+  for (const fileName of files) {
+    const markdown = fs.readFileSync(path.join(directoryPath, fileName), "utf8");
+    const identifiers = new Set(footnoteIdentifiers(markdown));
+
+    for (const identifier of identifiers) {
+      if (/^\d+$/.test(identifier)) {
+        errors.push(`[^${identifier}] in ${fileName} uses a local numeric identifier`);
+      }
+
+      const firstSeen = firstSeenByIdentifier.get(identifier);
+
+      if (firstSeen && firstSeen !== fileName) {
+        errors.push(`[^${identifier}] is used in both ${firstSeen} and ${fileName}`);
+        continue;
+      }
+
+      firstSeenByIdentifier.set(identifier, fileName);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(`Footnote identifiers must be unique across the document:\n${errors.join("\n")}`);
+  }
+}
+
 export function pandocArgs(directoryPath, outputPath = "index.html", options = {}) {
   const metadata = readMetadata(directoryPath);
   const args = [
@@ -195,6 +236,7 @@ export function main(args) {
 
   try {
     fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata));
+    validateFootnoteIdentifiers(directoryPath);
 
     const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath }), {
       cwd: directoryPath,

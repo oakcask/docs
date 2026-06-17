@@ -24,6 +24,15 @@ Create and maintain these files at the project root:
 - Start each artifact with a level-2 heading (`##`) unless the project-specific instructions say otherwise.
 - Preserve project-specific additions in `AGENTS.md`; this skill only standardizes the shared deliverable structure.
 
+## Footnotes
+
+Pandoc renders all artifacts as one document, so footnote identifiers must be unique across the whole report, not only within one file.
+
+- Do not use local numeric IDs such as `[^1]`, `[^2]`, or `[^note]` in final artifacts.
+- Use stable global IDs that include the artifact identity, for example `[^s3-raci]`, `[^s7-cmmi]`, `[^abstract-term]`, or `[^appendix-dataset]`.
+- When moving text between chapters, update both the footnote reference and the matching definition.
+- Before generating HTML, run the repository's document generation or test command so duplicate footnote IDs are caught.
+
 ## Metadata
 
 Generate document's metadata as JSON:

@@ -5,7 +5,13 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { ghPagesHeaderHtml, inputFiles, pandocArgs, readMetadata } from "./generate-doc-html.mjs";
+import {
+  ghPagesHeaderHtml,
+  inputFiles,
+  pandocArgs,
+  readMetadata,
+  validateFootnoteIdentifiers,
+} from "./generate-doc-html.mjs";
 
 const scriptPath = fileURLToPath(new URL("generate-doc-html.mjs", import.meta.url));
 const hasPandoc = spawnSync("pandoc", ["--version"], { encoding: "utf8" }).status === 0;
@@ -106,6 +112,40 @@ test("generates standalone HTML to an explicit output path", { skip: !hasPandoc 
 
   assert.equal(result.status, 0, result.stderr);
   assert.match(fs.readFileSync(outputPath, "utf8"), /Section body\./);
+});
+
+test("allows repeated footnote identifiers within one artifact", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^s1-term].\n\n[^s1-term]: Definition.\n");
+
+  assert.doesNotThrow(() => validateFootnoteIdentifiers(directoryPath));
+});
+
+test("rejects duplicate footnote identifiers across artifacts", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeSection(directoryPath, "1.md", "## Section 1\n\nFirst[^shared].\n\n[^shared]: First definition.\n");
+  writeSection(directoryPath, "2.md", "## Section 2\n\nSecond[^shared].\n\n[^shared]: Second definition.\n");
+
+  assert.throws(
+    () => validateFootnoteIdentifiers(directoryPath),
+    /Footnote identifiers must be unique across the document:\n\[\^shared\] is used in both sections\/1\.md and sections\/2\.md/,
+  );
+});
+
+test("rejects local numeric footnote identifiers", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^1].\n\n[^1]: Definition.\n");
+
+  assert.throws(
+    () => validateFootnoteIdentifiers(directoryPath),
+    /Footnote identifiers must be unique across the document:\n\[\^1\] in sections\/1\.md uses a local numeric identifier/,
+  );
 });
 
 test("fails when metadata.json is missing", (t) => {
