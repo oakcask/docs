@@ -7,6 +7,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const USAGE = "Usage: node scripts/generate-doc-html.mjs <directory> [output-html]";
+export const DOCS_BASE_URL_ENV = "DOCS_BASE_URL";
+export const DEFAULT_DOCS_BASE_URL = "https://oakcask.github.io/docs/";
 
 function fail(message) {
   throw new Error(message);
@@ -96,8 +98,20 @@ export function escapeHtmlAttribute(value) {
   });
 }
 
-export function ghPagesHeaderHtml(metadata) {
+export function ghPagesDocumentUrl(directoryPath) {
+  return new URL(`${path.basename(path.resolve(directoryPath))}/`, docsBaseUrl()).href;
+}
+
+export function docsBaseUrl(env = process.env) {
+  const baseUrl = env[DOCS_BASE_URL_ENV] || DEFAULT_DOCS_BASE_URL;
+  return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+}
+
+export function ghPagesHeaderHtml(metadata, pageUrl) {
+  const urlMeta = pageUrl ? `<meta property="og:url" content="${escapeHtmlAttribute(pageUrl)}">\n` : "";
+
   return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">
+${urlMeta}<meta property="og:type" content="article">
 <style>
   html {
     font-size: 16pt;
@@ -204,6 +218,7 @@ export function pandocArgs(directoryPath, outputPath = "index.html", options = {
     "-o",
     outputPath,
     "--from=gfm",
+    "--to=html5",
     "--standalone",
     "--toc",
     "--wrap=none",
@@ -235,7 +250,7 @@ export function main(args) {
   const headerPath = path.join(temporaryDirectory, "header.html");
 
   try {
-    fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata));
+    fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata, ghPagesDocumentUrl(directoryPath)));
     validateFootnoteIdentifiers(directoryPath);
 
     const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath }), {

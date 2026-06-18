@@ -6,6 +6,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import {
+  DEFAULT_DOCS_BASE_URL,
+  docsBaseUrl,
+  ghPagesDocumentUrl,
   ghPagesHeaderHtml,
   inputFiles,
   pandocArgs,
@@ -62,6 +65,7 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "-o",
     "index.html",
     "--from=gfm",
+    "--to=html5",
     "--standalone",
     "--toc",
     "--wrap=none",
@@ -94,6 +98,8 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /^<!DOCTYPE html>/);
   assert.match(html, /<title>Fixture Title<\/title>/);
   assert.match(html, /<meta property="og:title" content="Fixture Title">/);
+  assert.ok(html.includes(`<meta property="og:url" content="${ghPagesDocumentUrl(directoryPath)}">`));
+  assert.match(html, /<meta property="og:type" content="article">/);
   assert.match(html, /html \{\n\s+font-size: 16pt;\n\s+\}/);
   assert.match(html, /@media print \{\n\s+html \{\n\s+font-size: 12pt;\n\s+\}/);
   assert.match(html, /Section body\./);
@@ -168,6 +174,30 @@ test("escapes OGP title for HTML attributes", () => {
     ghPagesHeaderHtml({ title: `A&B <"quoted">'` }).split("\n")[0],
     `<meta property="og:title" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">`,
   );
+});
+
+test("generates OGP URL for article pages", (t) => {
+  const previousBaseUrl = process.env.DOCS_BASE_URL;
+  t.after(() => {
+    if (previousBaseUrl === undefined) {
+      delete process.env.DOCS_BASE_URL;
+    } else {
+      process.env.DOCS_BASE_URL = previousBaseUrl;
+    }
+  });
+
+  assert.equal(docsBaseUrl({ DOCS_BASE_URL: "https://example.com/docs" }), "https://example.com/docs/");
+  assert.equal(ghPagesDocumentUrl("fixture-doc"), `${DEFAULT_DOCS_BASE_URL}fixture-doc/`);
+  process.env.DOCS_BASE_URL = "https://example.com/docs";
+  assert.equal(ghPagesDocumentUrl("fixture-doc"), "https://example.com/docs/fixture-doc/");
+  assert.match(
+    ghPagesHeaderHtml({ title: "Fixture Title" }, `${DEFAULT_DOCS_BASE_URL}fixture-doc/?a=1&b=2`),
+    /<meta property="og:url" content="https:\/\/oakcask\.github\.io\/docs\/fixture-doc\/\?a=1&amp;b=2">/,
+  );
+});
+
+test("generates OGP type for article pages", () => {
+  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /<meta property="og:type" content="article">/);
 });
 
 test("generates gh-pages header CSS", () => {
