@@ -3,7 +3,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
-import { docsIndexHtml, escapeHtml, readTitle } from "./generate-docs-index.mjs";
+import { DEFAULT_DOCS_BASE_URL, docsBaseUrl, docsIndexHtml, escapeHtml, readTitle } from "./generate-docs-index.mjs";
 
 function makeFixture(t) {
   const directoryPath = fs.mkdtempSync(path.join(os.tmpdir(), "generate-docs-index-"));
@@ -39,6 +39,26 @@ test("generates links to each document index", (t) => {
 
   assert.match(html, /<a href="[^\"]*\/first-doc">First &amp; Best<\/a>/);
   assert.match(html, /<a href="[^\"]*\/second-doc">Second &lt;Draft&gt;<\/a>/);
+});
+
+test("generates OGP type for website index", () => {
+  assert.match(docsIndexHtml([]), /<meta property="og:type" content="website">/);
+});
+
+test("generates OGP URL for website index", (t) => {
+  const previousBaseUrl = process.env.DOCS_BASE_URL;
+  t.after(() => {
+    if (previousBaseUrl === undefined) {
+      delete process.env.DOCS_BASE_URL;
+    } else {
+      process.env.DOCS_BASE_URL = previousBaseUrl;
+    }
+  });
+
+  assert.equal(docsBaseUrl({ DOCS_BASE_URL: "https://example.com/docs" }), "https://example.com/docs/");
+  assert.ok(docsIndexHtml([]).includes(`<meta property="og:url" content="${DEFAULT_DOCS_BASE_URL}">`));
+  process.env.DOCS_BASE_URL = "https://example.com/docs";
+  assert.ok(docsIndexHtml([]).includes(`<meta property="og:url" content="https://example.com/docs/">`));
 });
 
 test("fails when metadata title is blank", (t) => {

@@ -4,6 +4,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+export const DOCS_BASE_URL_ENV = "DOCS_BASE_URL";
+export const DEFAULT_DOCS_BASE_URL = "https://oakcask.github.io/docs/";
+
 function fail(message) {
   throw new Error(message);
 }
@@ -25,6 +28,11 @@ export function escapeHtml(value) {
         return char;
     }
   });
+}
+
+export function docsBaseUrl(env = process.env) {
+  const baseUrl = env[DOCS_BASE_URL_ENV] || DEFAULT_DOCS_BASE_URL;
+  return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
 }
 
 export function readTitle(directoryPath) {
@@ -60,6 +68,8 @@ export function docsIndexHtml(directoryPaths) {
   <head>
     <meta charset="utf-8">
     <title>oakcask/docs</title>
+    <meta property="og:url" content="${escapeHtml(docsBaseUrl())}">
+    <meta property="og:type" content="website">
   </head>
   <body>
     <h1><a href="https://github.com/oakcask/docs">oakcask/docs</h1>

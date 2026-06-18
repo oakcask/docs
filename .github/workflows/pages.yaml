@@ -32,9 +32,12 @@ jobs:
           sudo apt-get install -y pandoc
 
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
       - name: Build docs
+        env:
+          DOCS_BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: make docs
 
       - name: Upload Pages artifact
