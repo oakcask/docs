@@ -6,9 +6,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import {
+  AI_AUTHORSHIP_FOOTER,
   DEFAULT_DOCS_BASE_URL,
   docsBaseUrl,
   ghPagesDocumentUrl,
+  ghPagesFooterHtml,
   ghPagesHeaderHtml,
   inputFiles,
   pandocArgs,
@@ -81,6 +83,11 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "-o",
     path.join("dist", "index.html"),
   ]);
+  assert.ok(
+    pandocArgs(directoryPath, "index.html", { includeAfterBody: path.join("tmp", "footer.html") }).includes(
+      "--include-after-body",
+    ),
+  );
 });
 
 test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t) => {
@@ -103,6 +110,7 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /html \{\n\s+font-size: 16pt;\n\s+\}/);
   assert.match(html, /@media print \{\n\s+html \{\n\s+font-size: 12pt;\n\s+\}/);
   assert.match(html, /Section body\./);
+  assert.match(html, new RegExp(AI_AUTHORSHIP_FOOTER));
 });
 
 test("generates standalone HTML to an explicit output path", { skip: !hasPandoc }, (t) => {
@@ -203,4 +211,8 @@ test("generates OGP type for article pages", () => {
 test("generates gh-pages header CSS", () => {
   assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 16pt;/);
   assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 12pt;/);
+});
+
+test("generates gh-pages footer HTML", () => {
+  assert.equal(ghPagesFooterHtml(), `<hr>\n<footer><p>${AI_AUTHORSHIP_FOOTER}</p></footer>\n`);
 });

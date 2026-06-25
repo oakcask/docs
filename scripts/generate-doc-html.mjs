@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 const USAGE = "Usage: node scripts/generate-doc-html.mjs <directory> [output-html]";
 export const DOCS_BASE_URL_ENV = "DOCS_BASE_URL";
 export const DEFAULT_DOCS_BASE_URL = "https://oakcask.github.io/docs/";
+export const AI_AUTHORSHIP_FOOTER = "この文章のほとんどの部分は AI エージェントによって記述された。";
 
 function fail(message) {
   throw new Error(message);
@@ -125,6 +126,12 @@ ${urlMeta}<meta property="og:type" content="article">
 `;
 }
 
+export function ghPagesFooterHtml() {
+  return `<hr>
+<footer><p>${AI_AUTHORSHIP_FOOTER}</p></footer>
+`;
+}
+
 function sectionNumber(fileName) {
   const match = fileName.match(/^(\d+(?:\.\d+)?)\.md$/);
   return match ? Number(match[1]) : null;
@@ -228,6 +235,10 @@ export function pandocArgs(directoryPath, outputPath = "index.html", options = {
     args.push("--include-in-header", options.includeInHeader);
   }
 
+  if (options.includeAfterBody) {
+    args.push("--include-after-body", options.includeAfterBody);
+  }
+
   args.push(...toMetadataArgs(metadata), ...inputFiles(directoryPath));
   return args;
 }
@@ -248,15 +259,21 @@ export function main(args) {
   const metadata = readMetadata(directoryPath);
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "generate-doc-html-"));
   const headerPath = path.join(temporaryDirectory, "header.html");
+  const footerPath = path.join(temporaryDirectory, "footer.html");
 
   try {
     fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata, ghPagesDocumentUrl(directoryPath)));
+    fs.writeFileSync(footerPath, ghPagesFooterHtml());
     validateFootnoteIdentifiers(directoryPath);
 
-    const result = spawnSync("pandoc", pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath }), {
-      cwd: directoryPath,
-      stdio: "inherit",
-    });
+    const result = spawnSync(
+      "pandoc",
+      pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath, includeAfterBody: footerPath }),
+      {
+        cwd: directoryPath,
+        stdio: "inherit",
+      },
+    );
 
     if (result.error) {
       fail(`Failed to run pandoc: ${result.error.message}`);
