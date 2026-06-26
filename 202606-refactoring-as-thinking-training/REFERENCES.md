@@ -46,7 +46,7 @@
 
 - Ferrante, J., Ottenstein, K. J., & Warren, J. D. (1987). The program dependence graph and its use in optimization. *ACM Transactions on Programming Languages and Systems*, 9(3), 319-349. DOI: <https://doi.org/10.1145/24039.24041>。
 - Yamaguchi, F., Golde, N., Arp, D., & Rieck, K. (2014). Modeling and discovering vulnerabilities with code property graphs. *2014 IEEE Symposium on Security and Privacy*, 590-604. DOI: <https://doi.org/10.1109/SP.2014.44>。
-- Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). The impact of AI on developer productivity: Evidence from GitHub Copilot. arXiv. DOI: <https://doi.org/10.48550/arXiv.2302.06590>。
-- Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). Measuring the impact of early-2025 AI on experienced open-source developer productivity. arXiv. DOI: <https://doi.org/10.48550/arXiv.2507.09089>。
+- Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). The impact of AI on developer productivity: Evidence from GitHub Copilot. arXiv preprint, arXiv:2302.06590v1, submitted 2023年2月13日. DOI: <https://doi.org/10.48550/arXiv.2302.06590>。2026年6月25日参照。
+- Becker, J., Rush, N., Barnes, E., & Rein, D. (2025). Measuring the impact of early-2025 AI on experienced open-source developer productivity. arXiv preprint, arXiv:2507.09089v2, updated 2025年7月25日. DOI: <https://doi.org/10.48550/arXiv.2507.09089>。2026年6月25日参照。
 - Becker, J., Rush, N., Cunningham, T., Rein, D., & Mahamud, K. (2026). We are changing our developer productivity experiment design. *METR Blog*, 2026年2月24日。URL: <https://metr.org/blog/2026-02-24-uplift-update/>。
 - Vaithilingam, P., Zhang, T., & Glassman, E. L. (2022). Expectation vs. experience: Evaluating the usability of code generation tools powered by large language models. *Extended Abstracts of the 2022 CHI Conference on Human Factors in Computing Systems*. DOI: <https://doi.org/10.1145/3491101.3519665>。
