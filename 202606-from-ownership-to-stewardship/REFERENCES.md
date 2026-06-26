@@ -36,7 +36,7 @@
 
 ### 日本の職場・無意識の思い込み
 
-- 内閣府男女共同参画局（2021）「令和3年度 性別による無意識の思い込み（アンコンシャス・バイアス）に関する調査研究」2021年9月30日。URL: <https://www.gender.go.jp/research/kenkyu/seibetsu_r03.html>。調査結果PDF: <https://www.gender.go.jp/research/kenkyu/pdf/seibetsu_r03/02.pdf>。
+- 内閣府男女共同参画局（2021）「令和3年度 性別による無意識の思い込み（アンコンシャス・バイアス）に関する調査研究」2021年9月30日。URL: <https://www.gender.go.jp/research/kenkyu/seibetsu_r03.html>。調査結果PDF: <https://www.gender.go.jp/research/kenkyu/pdf/seibetsu_r03/02.pdf>。2026年6月25日参照。
 
 ### ソフトウェア開発組織・運用・越境役割
 
@@ -46,6 +46,7 @@
 - Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. (Eds.). (2016). *Site Reliability Engineering: How Google Runs Production Systems*. O’Reilly Media. URL: <https://sre.google/sre-book/introduction/>
 - Rau, V. (2016). Eliminating toil. In B. Beyer, C. Jones, J. Petoff, & N. R. Murphy (Eds.), *Site Reliability Engineering: How Google Runs Production Systems*. O’Reilly Media. URL: <https://sre.google/sre-book/eliminating-toil/>
 - Reilly, T. (n.d.). Being glue. *No Idea Blog*. URL: <https://www.noidea.dog/glue>. 2026年6月17日参照。
+- Nygard, M. (2011). Documenting architecture decisions. *Cognitect Blog*. URL: <https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions>. 2026年6月25日参照。
 - Larson, W. (2021). Staff archetypes. *Staff Engineer: Leadership beyond the management track*. URL: <https://staffeng.com/guides/staff-archetypes/>. 2026年6月17日参照。
 - Wenger, E. (1998). *Communities of Practice: Learning, Meaning, and Identity*. Cambridge University Press. DOI: <https://doi.org/10.1017/CBO9780511803932>. ISBN: 9780511803932. 2026年6月17日参照。
 - Wenger-Trayner, E., & Wenger-Trayner, B. (2015). Introduction to communities of practice. *Wenger-Trayner*. URL: <https://www.wenger-trayner.com/introduction-to-communities-of-practice/>. 2026年6月17日参照。

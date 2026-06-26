@@ -1,8 +1,10 @@
 ## 参考文献
 
+アクセス日は、特に断りのない限り2026年6月25日である。arXiv 文献は確認時点の arXiv レコードに基づき、DOI は arXiv DOI 形式で示す。
+
 ### 中心文献：コードベース中心の合意・AI 協働
 
-- Wang, Tianfu, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, and Hui Xiong. 2026. “Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer.” URL: <https://arxiv.org/abs/2604.17883>. arXiv:2604.17883.
+- Wang, Tianfu, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, and Hui Xiong. 2026. “Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer.” arXiv preprint, arXiv:2604.17883. DOI: <https://doi.org/10.48550/arXiv.2604.17883>. URL: <https://arxiv.org/abs/2604.17883>.
 
 - Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2020. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” URL: <https://arxiv.org/abs/2005.11401>. *Advances in Neural Information Processing Systems 33*.
 
@@ -10,7 +12,7 @@
 
 - Yamaguchi, Fabian, Nico Golde, Daniel Arp, and Konrad Rieck. 2014. “Modeling and Discovering Vulnerabilities with Code Property Graphs.” DOI: <https://doi.org/10.1109/SP.2014.44>. In *2014 IEEE Symposium on Security and Privacy*, 590–604.
 
-- Li, Jia, Xianjie Shi, Kechi Zhang, Ge Li, Zhi Jin, Lei Li, Huangzhao Zhang, Jia Li, Fang Liu, Yuwei Zhang, Zhengwei Tao, Yihong Dong, Yuqi Zhu, and Chongyang Tao. 2025. “GraphCodeAgent: Dual Graph-Guided LLM Agent for Retrieval-Augmented Repo-Level Code Generation.” URL: <https://arxiv.org/abs/2504.10046>. arXiv:2504.10046.
+- Li, Jia, Xianjie Shi, Kechi Zhang, Ge Li, Zhi Jin, Lei Li, Huangzhao Zhang, Jia Li, Fang Liu, Yuwei Zhang, Zhengwei Tao, Yihong Dong, Yuqi Zhu, and Chongyang Tao. 2025. “GraphCodeAgent: Dual Graph-Guided LLM Agent for Retrieval-Augmented Repo-Level Code Generation.” arXiv preprint, arXiv:2504.10046. DOI: <https://doi.org/10.48550/arXiv.2504.10046>. URL: <https://arxiv.org/abs/2504.10046>.
 
 - Shrivastava, Disha, Hugo Larochelle, and Daniel Tarlow. 2023. “Repository-Level Prompt Generation for Large Language Models of Code.” DOI: <https://doi.org/10.48550/arXiv.2206.12839>. In *Proceedings of the 40th International Conference on Machine Learning*.
 
@@ -18,17 +20,17 @@
 
 ### LLM エージェント・コード生成・評価ベンチマーク
 
-- Jimenez, Carlos E., John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik Narasimhan. 2024. “SWE-bench: Can Language Models Resolve Real-World GitHub Issues?” URL: <https://arxiv.org/abs/2310.06770>. In *International Conference on Learning Representations*.
+- Jimenez, Carlos E., John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik Narasimhan. 2024. “SWE-bench: Can Language Models Resolve Real-World GitHub Issues?” In *International Conference on Learning Representations*. arXiv:2310.06770. DOI: <https://doi.org/10.48550/arXiv.2310.06770>. URL: <https://arxiv.org/abs/2310.06770>.
 
-- Yang, John, Carlos E. Jimenez, Alexander Wettig, Kilian Lieret, Shunyu Yao, Karthik Narasimhan, and Ofir Press. 2024. “SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering.” URL: <https://arxiv.org/abs/2405.15793>. arXiv:2405.15793.
+- Yang, John, Carlos E. Jimenez, Alexander Wettig, Kilian Lieret, Shunyu Yao, Karthik Narasimhan, and Ofir Press. 2024. “SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering.” arXiv preprint, arXiv:2405.15793. DOI: <https://doi.org/10.48550/arXiv.2405.15793>. URL: <https://arxiv.org/abs/2405.15793>.
 
-- Zhang, Yuntong, Haifeng Ruan, Zhiyu Fan, and Abhik Roychoudhury. 2024. “AutoCodeRover: Autonomous Program Improvement.” DOI: <https://doi.org/10.48550/arXiv.2404.05427>. arXiv:2404.05427.
+- Zhang, Yuntong, Haifeng Ruan, Zhiyu Fan, and Abhik Roychoudhury. 2024. “AutoCodeRover: Autonomous Program Improvement.” arXiv preprint, arXiv:2404.05427. DOI: <https://doi.org/10.48550/arXiv.2404.05427>. URL: <https://arxiv.org/abs/2404.05427>.
 
-- Wang, Xingyao, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bowen Li, Jaskirat Singh, Hoang H. Tran, Fuqiang Li, Ren Ma, Mingzhang Zheng, Bill Qian, Yanjun Shao, Niklas Muennighoff, Yizhe Zhang, Binyuan Hui, Junyang Lin, Robert Brennan, Hao Peng, Heng Ji, and Graham Neubig. 2025. “OpenHands: An Open Platform for AI Software Developers as Generalist Agents.” URL: <https://arxiv.org/abs/2407.16741>. In *International Conference on Learning Representations*.
+- Wang, Xingyao, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bowen Li, Jaskirat Singh, Hoang H. Tran, Fuqiang Li, Ren Ma, Mingzhang Zheng, Bill Qian, Yanjun Shao, Niklas Muennighoff, Yizhe Zhang, Binyuan Hui, Junyang Lin, Robert Brennan, Hao Peng, Heng Ji, and Graham Neubig. 2025. “OpenHands: An Open Platform for AI Software Developers as Generalist Agents.” In *International Conference on Learning Representations*. arXiv:2407.16741. DOI: <https://doi.org/10.48550/arXiv.2407.16741>. URL: <https://arxiv.org/abs/2407.16741>.
 
-- Xia, Chunqiu Steven, Yinlin Deng, Soren Dunn, and Lingming Zhang. 2024. “Agentless: Demystifying LLM-based Software Engineering Agents.” URL: <https://arxiv.org/abs/2407.01489>. arXiv:2407.01489.
+- Xia, Chunqiu Steven, Yinlin Deng, Soren Dunn, and Lingming Zhang. 2024. “Agentless: Demystifying LLM-based Software Engineering Agents.” arXiv preprint, arXiv:2407.01489. DOI: <https://doi.org/10.48550/arXiv.2407.01489>. URL: <https://arxiv.org/abs/2407.01489>.
 
-- Tao, Wei, Yucheng Zhou, Yanlin Wang, Wenqiang Zhang, Hongyu Zhang, and Yu Cheng. 2024. “MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution.” URL: <https://arxiv.org/abs/2403.17927>. arXiv:2403.17927.
+- Tao, Wei, Yucheng Zhou, Yanlin Wang, Wenqiang Zhang, Hongyu Zhang, and Yu Cheng. 2024. “MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution.” arXiv preprint, arXiv:2403.17927. DOI: <https://doi.org/10.48550/arXiv.2403.17927>. URL: <https://arxiv.org/abs/2403.17927>.
 
 ### 推論・計画・自己修正に関する基礎文献
 
@@ -64,7 +66,11 @@
 
 - Murphy, Gail C., David Notkin, and Kevin J. Sullivan. 2001. “Software Reflexion Models: Bridging the Gap between Design and Implementation.” DOI: <https://doi.org/10.1109/32.917525>. *IEEE Transactions on Software Engineering* 27, no. 4: 364–380.
 
-- OpenSSF. n.d. “Supply-chain Levels for Software Artifacts Specification.” URL: <https://slsa.dev/spec/>. Open Source Security Foundation.
+- OpenSSF. 2026. “SLSA Specification.” SLSA v1.2, Approved. Open Source Security Foundation. URL: <https://slsa.dev/spec/v1.2/>.
+
+- United States Department of Commerce. 2021. *The Minimum Elements For a Software Bill of Materials (SBOM).* URL: <https://www.ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf>.
+
+- OpenSSF Scorecard. 2026. “OpenSSF Scorecard.” Open Source Security Foundation. URL: <https://securityscorecards.dev/>.
 
 ### ソフトウェア設計・保守性・技術的負債
 
