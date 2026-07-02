@@ -35,7 +35,7 @@ Pandoc renders all artifacts as one document, so footnote identifiers must be un
 
 ## Metadata
 
-Generate document's metadata as JSON:
+Generate document metadata as minimal JSON:
 
 ```json
 {
@@ -44,3 +44,4 @@ Generate document's metadata as JSON:
 ```
 
 * `title`: The report title. Use same language as the report writing rule.
+* Do not add extra attribute.
