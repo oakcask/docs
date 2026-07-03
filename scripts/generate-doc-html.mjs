@@ -53,6 +53,10 @@ export function readMetadata(directoryPath) {
     fail("metadata.json must contain a non-empty string title");
   }
 
+  if (typeof metadata.description !== "string" || metadata.description.trim() === "") {
+    fail("metadata.json must contain a non-empty string description");
+  }
+
   return metadata;
 }
 
@@ -110,9 +114,11 @@ export function docsBaseUrl(env = process.env) {
 
 export function ghPagesHeaderHtml(metadata, pageUrl) {
   const urlMeta = pageUrl ? `<meta property="og:url" content="${escapeHtmlAttribute(pageUrl)}">\n` : "";
+  const descriptionMeta = `<meta property="og:description" content="${escapeHtmlAttribute(metadata.description)}">\n`;
 
   return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">
 ${urlMeta}<meta property="og:type" content="article"><meta property="og:site_name" content="oakcask/docs">
+${descriptionMeta}<meta property="og:type" content="article">
 <style>
   html {
     font-size: 16pt;

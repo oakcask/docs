@@ -39,9 +39,11 @@ Generate document metadata as minimal JSON:
 
 ```json
 {
-  "title": ...
+  "title": ...,
+  "description": ...
 }
 ```
 
 * `title`: The report title. Use same language as the report writing rule.
-* Do not add extra attribute.
+* `description`: A one-sentence summary for search snippets and OGP cards. Compress the abstract into about 80-120 Japanese characters, put the main claim or conclusion first, and avoid citations, Markdown, and line breaks.
+* Do not add extra attributes unless project-specific instructions require them.

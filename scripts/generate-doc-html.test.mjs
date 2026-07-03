@@ -47,7 +47,7 @@ function runScript(directoryPath, outputPath) {
 test("builds pandoc arguments from report artifacts in document order", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writeFile(directoryPath, "TOC.md", "## Contents\n\nContents body.\n");
   writeSection(directoryPath, "10.md", "## Section 10\n\nSection 10 body.\n");
@@ -73,6 +73,8 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "--wrap=none",
     "--metadata",
     "title=Fixture Title",
+    "--metadata",
+    "description=Fixture summary",
     "ABSTRACT.md",
     path.join("sections", "2.md"),
     path.join("sections", "10.md"),
@@ -93,7 +95,7 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
 test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
 
@@ -105,6 +107,8 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /^<!DOCTYPE html>/);
   assert.match(html, /<title>Fixture Title<\/title>/);
   assert.match(html, /<meta property="og:title" content="Fixture Title">/);
+  assert.match(html, /<meta name="description" content="Fixture summary" \/>/);
+  assert.match(html, /<meta property="og:description" content="Fixture summary">/);
   assert.ok(html.includes(`<meta property="og:url" content="${ghPagesDocumentUrl(directoryPath)}">`));
   assert.match(html, /<meta property="og:type" content="article">/);
   assert.match(html, /html \{\n\s+font-size: 16pt;\n\s+\}/);
@@ -118,7 +122,7 @@ test("generates standalone HTML to an explicit output path", { skip: !hasPandoc 
   const outputPath = path.join(directoryPath, "dist", "doc", "index.html");
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
 
@@ -131,7 +135,7 @@ test("generates standalone HTML to an explicit output path", { skip: !hasPandoc 
 test("allows repeated footnote identifiers within one artifact", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^s1-term].\n\n[^s1-term]: Definition.\n");
 
   assert.doesNotThrow(() => validateFootnoteIdentifiers(directoryPath));
@@ -140,7 +144,7 @@ test("allows repeated footnote identifiers within one artifact", (t) => {
 test("rejects duplicate footnote identifiers across artifacts", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeSection(directoryPath, "1.md", "## Section 1\n\nFirst[^shared].\n\n[^shared]: First definition.\n");
   writeSection(directoryPath, "2.md", "## Section 2\n\nSecond[^shared].\n\n[^shared]: Second definition.\n");
 
@@ -153,7 +157,7 @@ test("rejects duplicate footnote identifiers across artifacts", (t) => {
 test("rejects local numeric footnote identifiers", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
   writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^1].\n\n[^1]: Definition.\n");
 
   assert.throws(
@@ -177,10 +181,25 @@ test("fails when metadata title is blank", (t) => {
   assert.throws(() => readMetadata(directoryPath), /non-empty string title/);
 });
 
+test("fails when metadata description is blank", (t) => {
+  const directoryPath = makeFixture(t);
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: " " }));
+  writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
+
+  assert.throws(() => readMetadata(directoryPath), /non-empty string description/);
+});
+
 test("escapes OGP title for HTML attributes", () => {
   assert.equal(
-    ghPagesHeaderHtml({ title: `A&B <"quoted">'` }).split("\n")[0],
+    ghPagesHeaderHtml({ title: `A&B <"quoted">'`, description: "Fixture summary" }).split("\n")[0],
     `<meta property="og:title" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">`,
+  );
+});
+
+test("escapes description for HTML attributes", () => {
+  assert.match(
+    ghPagesHeaderHtml({ title: "Fixture Title", description: `A&B <"quoted">'` }),
+    /<meta property="og:description" content="A&amp;B &lt;&quot;quoted&quot;&gt;&#39;">/,
   );
 });
 
@@ -199,18 +218,24 @@ test("generates OGP URL for article pages", (t) => {
   process.env.DOCS_BASE_URL = "https://example.com/docs";
   assert.equal(ghPagesDocumentUrl("fixture-doc"), "https://example.com/docs/fixture-doc/");
   assert.match(
-    ghPagesHeaderHtml({ title: "Fixture Title" }, `${DEFAULT_DOCS_BASE_URL}fixture-doc/?a=1&b=2`),
+    ghPagesHeaderHtml(
+      { title: "Fixture Title", description: "Fixture summary" },
+      `${DEFAULT_DOCS_BASE_URL}fixture-doc/?a=1&b=2`,
+    ),
     /<meta property="og:url" content="https:\/\/oakcask\.github\.io\/docs\/fixture-doc\/\?a=1&amp;b=2">/,
   );
 });
 
 test("generates OGP type for article pages", () => {
-  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /<meta property="og:type" content="article">/);
+  assert.match(
+    ghPagesHeaderHtml({ title: "Fixture Title", description: "Fixture summary" }),
+    /<meta property="og:type" content="article">/,
+  );
 });
 
 test("generates gh-pages header CSS", () => {
-  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 16pt;/);
-  assert.match(ghPagesHeaderHtml({ title: "Fixture Title" }), /font-size: 12pt;/);
+  assert.match(ghPagesHeaderHtml({ title: "Fixture Title", description: "Fixture summary" }), /font-size: 16pt;/);
+  assert.match(ghPagesHeaderHtml({ title: "Fixture Title", description: "Fixture summary" }), /font-size: 12pt;/);
 });
 
 test("generates gh-pages footer HTML", () => {
