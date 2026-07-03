@@ -112,7 +112,7 @@ export function ghPagesHeaderHtml(metadata, pageUrl) {
   const urlMeta = pageUrl ? `<meta property="og:url" content="${escapeHtmlAttribute(pageUrl)}">\n` : "";
 
   return `<meta property="og:title" content="${escapeHtmlAttribute(metadata.title)}">
-${urlMeta}<meta property="og:type" content="article">
+${urlMeta}<meta property="og:type" content="article"><meta property="og:site_name" content="oakcask/docs">
 <style>
   html {
     font-size: 16pt;
