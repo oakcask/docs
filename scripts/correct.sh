@@ -3,14 +3,18 @@ set -euo pipefail
 ROOT=$(cd $(dirname $0)/..; pwd)
 DONE=
 
+run_codex() {
+  codex --ask-for-approval=on-request --sandbox workspace-write -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/$1")"
+}
+
 while [ -z "$DONE" ]; do
-  codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/REVIEW-citation.md")"
-  codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/REVIEW-quality.md")"
-  codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/REVIEW-naturality.md")"
-  codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/REVIEW-consistency.md")"
+  run_codex REVIEW-citation.md
+  run_codex REVIEW-quality.md
+  run_codex REVIEW-naturality.md
+  run_codex REVIEW-consistency.md
   if test -f COMMENTS.md; then
-    codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/UPDATE.md")"
-    codex --ask-for-approval=on-request -c 'model_reasoning_effort="medium"' e "$(<"$ROOT/prompts/CLOSING.md")"
+    run_codex UPDATE.md
+    run_codex CLOSING.md
   else
     DONE=y
   fi
