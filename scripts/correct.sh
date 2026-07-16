@@ -11,10 +11,14 @@ while [ -z "$DONE" ]; do
   run_codex REVIEW-citation.md
   run_codex REVIEW-quality.md
   run_codex REVIEW-naturality.md
+  run_codex REVIEW-dedup.md
   run_codex REVIEW-consistency.md
   if test -f COMMENTS.md; then
     run_codex UPDATE.md
     run_codex CLOSING.md
+    if test -f COMMENTS.md; then
+      DONE=y
+    fi
   else
     DONE=y
   fi
