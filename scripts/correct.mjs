@@ -47,6 +47,7 @@ function runCodex(promptName) {
       "-c",
       'model_reasoning_effort="medium"',
       "e",
+      "--ephemeral",
       prompt,
     ],
     { stdio: "inherit" },
