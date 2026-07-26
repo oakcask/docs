@@ -12,7 +12,7 @@
 
 ### コードLLMと学習コーパス
 
-- Allal, Loubna Ben, et al. (2025). "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model." arXiv:2502.02737. DOI: <https://doi.org/10.48550/arXiv.2502.02737>.
+- Ben Allal, Loubna, et al. (2025). "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model." arXiv:2502.02737. DOI: <https://doi.org/10.48550/arXiv.2502.02737>.
 - Chen, Mark, et al. (2021). "Evaluating Large Language Models Trained on Code." arXiv:2107.03374. DOI: <https://doi.org/10.48550/arXiv.2107.03374>.
 - Hugging Face TB（n.d.）"stack-edu." *Hugging Face Datasets*. URL: <https://huggingface.co/datasets/HuggingFaceTB/stack-edu>.
 - Lozhkov, Anton, et al. (2024). "StarCoder 2 and The Stack v2: The Next Generation." arXiv:2402.19173. DOI: <https://doi.org/10.48550/arXiv.2402.19173>.
