@@ -16,7 +16,7 @@
 
 ### ファッション史・市場事例
 
-- Bass-Krueger, Maude. (n.d.). “The High-Life: A History of Men in Heels.” *Google Arts & Culture*. 2026年5月13日参照。URL: <https://artsandculture.google.com/story/VAVBgMgwSKV5Kw>
+- Bass-Krueger, Maude. (n.d.). “The High-Life: A History of Men in Heels.” *Google Arts & Culture*. 2026年7月27日参照。URL: <https://artsandculture.google.com/story/VAVBgMgwSKV5Kw>
 - Binkley, Christina. (2023). “Gender-fluid fashion is here. How should retailers sell it?” *Vogue Business*, June 20, 2023. 2026年5月13日参照。URL: <https://www.vogue.com/article/gender-fluid-fashion-is-here-how-should-retailers-sell-it>
 - Bourne, Leah. (2020). “The Joy of Being a Woman Who Shops in the Men’s Department.” *Glamour*, July 31, 2020. 2026年5月12日参照。URL: <https://www.glamour.com/story/mens-clothing-for-women-shopping-tips>
 - Champion. (n.d.). “Over 100 Years of Champion.” 参照: 1930年代のフード付きスウェットシャツおよび大学衣料への展開に関する企業史上の説明。服飾史上の起源確定ではなく、企業史資料として用いる。2026年5月13日参照。URL: <https://www.champion.com/pages/about-champion>
@@ -33,7 +33,7 @@
 - PBS American Experience. (2023). *Riveted: The History of Jeans*. Written, produced, and directed by Michael Bicks and Anna Lee Strachan, aired January 10, 2023. 2026年5月3日参照。URL: <https://www.pbs.org/wgbh/americanexperience/films/riveted-history-of-jeans/>
 - Satenstein, Liana. (2017). “Meet the Spanish Label Putting a Fairy-Tale Spin on Menswear.” *Vogue*, January 10, 2017. 2026年5月3日参照。URL: <https://www.vogue.com/article/spanish-menswear-label-palomo>
 - Jordan, Laura. (2017). “The Spanish Designer Subverting Gender Stereotypes.” *AnOther*, March 22, 2017. 2026年5月2日参照。URL: <https://www.anothermag.com/fashion-beauty/9644/the-spanish-designer-subverting-gender-stereotypes>
-- Schlup, Murielle. (2025). “High Heels: From the Battlefield to the Height of Fashion.” *Swiss National Museum*, published August 7, 2025; modified December 17, 2025. 2026年5月13日参照。URL: <https://blog.nationalmuseum.ch/en/2025/08/high-heels-from-the-battlefield-to-the-height-of-fashion/>
+- Schlup, Murielle. (2025). “High Heels: From the Battlefield to the Height of Fashion.” *Swiss National Museum*, published August 7, 2025; modified December 17, 2025. 2026年7月27日参照。URL: <https://blog.nationalmuseum.ch/en/2025/08/high-heels-from-the-battlefield-to-the-height-of-fashion/>
 - Semmelhack, Elizabeth. (2008). *Heights of Fashion: A History of the Elevated Shoe*. Bata Shoe Museum; Periscope Publishing. 参照: 高い靴の文化史に関する背景文献。本文中のペルシア騎兵、欧州宮廷受容、ルイ14世の赤いヒールの細部は、該当頁を確認できないため本書の直接根拠としては用いず、Google Arts & Culture および Swiss National Museum の博物館系解説に依拠する。ISBN: 9781934772942
 - Shoaib, Maliha. (2023). “Gender-neutral Fashion Has a Sizing Problem.” *Vogue Business*, July 24, 2023. 2026年5月13日参照。URL: <https://www.vogue.com/article/gender-neutral-fashion-has-a-sizing-problem>
 - Shoaib, Maliha, & Maguire, Lucy. (2025). “The Editor’s Cut: A Full Data Breakdown From the Vogue Business Consumer Sizing Survey.” *Vogue Business*, October 13, 2025. 2026年5月13日参照。URL: <https://www.vogue.com/article/the-editors-cut-a-full-data-breakdown-from-the-vogue-business-consumer-sizing-survey>
