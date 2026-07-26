@@ -46,6 +46,8 @@ function runCodex(promptName) {
       "workspace-write",
       "-c",
       'model_reasoning_effort="medium"',
+      "-m",
+      "gpt-5.5",
       "e",
       "--ephemeral",
       prompt,
