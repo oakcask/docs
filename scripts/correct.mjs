@@ -9,6 +9,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 
 const reviewPrompts = [
+  "REVIEW-falsifiability.md",
   "REVIEW-citation.md",
   "REVIEW-quality.md",
   "REVIEW-naturality.md",

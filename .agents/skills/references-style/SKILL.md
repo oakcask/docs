@@ -42,6 +42,7 @@ Prefer complete metadata over terse links. Capture the fields that exist for the
 - Book: authors/editors, year, title, edition when relevant, publisher, ISBN when known.
 - Chapter: chapter authors, year, chapter title, book title, editors, publisher, pages, DOI or URL when available.
 - Web page or article: author or organization, year or `n.d.`, page/article title, site/publication name, publication or update date when visible, URL.
+- Social media, GitHub, and similar web-service content: use the author or owner notation shown for the account on that service, including its displayed spelling, capitalization, and symbols. Prefer this service-specific account notation over a real name or normalized author name obtained elsewhere; do not infer an undisclosed identity. Include the handle or account ID as well when needed to identify the account unambiguously.
 - Standards, laws, policy, or official guidance: issuing body, year/version/date, title, edition/status when relevant, URL, and any currency caveat if the status may change.
 - Games, manga, films, and other primary works: creator/publisher, title, release years, consulted version, and the exact chapter/episode/scene/path when the report relies on a specific passage or interaction.
 
@@ -50,6 +51,7 @@ Use `n.d.` only when no publication year can be established. Do not invent missi
 ## Formatting Rules
 
 - Write Japanese author/organization names as `著者（年）`; write English-language scholarly sources as `Author, A. A., & Author, B. B. (Year).` unless the surrounding file already uses a consistent English bibliographic style.
+- In `著者（年）` citations for social media, GitHub, and similar web-service accounts, use the account notation displayed on that service as `著者`. Preserve the service's spelling and capitalization instead of converting it to a personal-name or organization-name style.
 - Use the English-form year marker `n.d.` for undated works regardless of the source language; do not use localized substitutes such as `年不詳`. Add disambiguation suffixes with a hyphen, as in `n.d.-a` and `n.d.-b`.
 - Use Japanese corner brackets for Japanese titles: 「記事・論文」 and 『書籍・媒体』.
 - Use italic Markdown for English book, journal, proceedings, and report titles when following English style.
@@ -83,6 +85,7 @@ Before finishing, check:
 
 - The heading and category levels are consistent.
 - Same-author, same-year works have letter suffixes that match between in-text citations and bibliography entries.
+- Social media, GitHub, and similar web-service accounts use the notation displayed on the service consistently in both author-year citations and bibliography entries.
 - Undated works use `n.d.` consistently across source languages, with hyphenated letter suffixes where disambiguation is needed.
 - General web pages are directly linked from a descriptive title or phrase at their first substantive mention when doing so helps readers, without replacing author-year citations or bibliography entries.
 - Every bullet has enough metadata to identify the source without opening the URL.
