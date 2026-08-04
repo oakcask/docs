@@ -139,8 +139,12 @@ export function ghPagesFooterHtml() {
 }
 
 function sectionNumber(fileName) {
-  const match = fileName.match(/^(\d+(?:\.\d+)?)\.md$/);
+  const match = fileName.match(/^(\d+)\.md$/);
   return match ? Number(match[1]) : null;
+}
+
+function numericNames(left, right) {
+  return Number(left.match(/^\d+/)[0]) - Number(right.match(/^\d+/)[0]);
 }
 
 export function sectionFiles(directoryPath) {
@@ -150,14 +154,46 @@ export function sectionFiles(directoryPath) {
     return [];
   }
 
-  return fs
+  const flatSections = fs
     .readdirSync(sectionsPath)
     .filter((fileName) => sectionNumber(fileName) !== null)
-    .sort((left, right) => {
-      const delta = sectionNumber(left) - sectionNumber(right);
-      return delta === 0 ? left.localeCompare(right) : delta;
-    })
+    .sort(numericNames)
     .map((fileName) => path.join("sections", fileName));
+
+  const partDirectories = fs
+    .readdirSync(sectionsPath, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && /^\d+$/.test(entry.name))
+    .map((entry) => entry.name)
+    .sort(numericNames);
+
+  if (partDirectories.length === 0) {
+    return flatSections;
+  }
+
+  if (flatSections.length > 0) {
+    fail("Cannot mix flat chapters and part directories under sections");
+  }
+
+  return partDirectories.flatMap((partName) => {
+    const partPath = path.join(sectionsPath, partName);
+    const partArtifactPath = path.join(partPath, "PART.md");
+
+    if (!existsAsFile(partArtifactPath)) {
+      fail(`Missing PART.md in sections/${partName}`);
+    }
+
+    const chapters = fs
+      .readdirSync(partPath)
+      .filter((fileName) => sectionNumber(fileName) !== null)
+      .sort(numericNames)
+      .map((fileName) => path.join("sections", partName, fileName));
+
+    if (chapters.length === 0) {
+      fail(`No chapters in sections/${partName}`);
+    }
+
+    return [path.join("sections", partName, "PART.md"), ...chapters];
+  });
 }
 
 export function inputFiles(directoryPath) {

@@ -36,6 +36,12 @@ function writeSection(directoryPath, fileName, content) {
   fs.writeFileSync(path.join(directoryPath, "sections", fileName), content);
 }
 
+function writePartFile(directoryPath, partName, fileName, content) {
+  const partPath = path.join(directoryPath, "sections", partName);
+  fs.mkdirSync(partPath, { recursive: true });
+  fs.writeFileSync(path.join(partPath, fileName), content);
+}
+
 function runScript(directoryPath, outputPath) {
   const args = outputPath ? [scriptPath, directoryPath, outputPath] : [scriptPath, directoryPath];
 
@@ -90,6 +96,47 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
       "--include-after-body",
     ),
   );
+});
+
+test("builds pandoc arguments from parts and chapters in document order", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
+  writePartFile(directoryPath, "02", "PART.md", "# Part 2\n\nPart introduction.\n");
+  writePartFile(directoryPath, "02", "10.md", "## Section 10\n\nSection 10 body.\n");
+  writePartFile(directoryPath, "01", "2.md", "## Section 2\n\nSection 2 body.\n");
+  writePartFile(directoryPath, "01", "PART.md", "# Part 1\n\nPart introduction.\n");
+  writePartFile(directoryPath, "01", "draft.md", "## Draft\n\nDraft body.\n");
+  writeFile(directoryPath, "REFERENCES.md", "## References\n\nReferences body.\n");
+
+  assert.deepEqual(inputFiles(directoryPath), [
+    "ABSTRACT.md",
+    path.join("sections", "01", "PART.md"),
+    path.join("sections", "01", "2.md"),
+    path.join("sections", "02", "PART.md"),
+    path.join("sections", "02", "10.md"),
+    "REFERENCES.md",
+  ]);
+});
+
+test("rejects mixed flat chapters and part directories", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
+  writePartFile(directoryPath, "01", "PART.md", "# Part 1\n\nPart introduction.\n");
+
+  assert.throws(() => inputFiles(directoryPath), /Cannot mix flat chapters and part directories under sections/);
+});
+
+test("requires a part artifact in each part directory", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writePartFile(directoryPath, "01", "1.md", "## Section 1\n\nSection body.\n");
+
+  assert.throws(() => inputFiles(directoryPath), /Missing PART\.md in sections\/01/);
 });
 
 test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t) => {
