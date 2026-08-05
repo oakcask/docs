@@ -15,6 +15,7 @@ const reviewPrompts = [
   "REVIEW-naturality.md",
   "REVIEW-dedup.md",
   "REVIEW-consistency.md",
+  "REVIEW-style.md",
 ];
 
 function parseMaxIterations(arguments_) {
