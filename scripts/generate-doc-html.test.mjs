@@ -8,7 +8,10 @@ import test from "node:test";
 import {
   AI_AUTHORSHIP_FOOTER,
   DEFAULT_DOCS_BASE_URL,
+  LAST_UPDATED_LABEL,
   docsBaseUrl,
+  formatJapaneseDate,
+  ghPagesBeforeBodyHtml,
   ghPagesDocumentUrl,
   ghPagesFooterHtml,
   ghPagesHeaderHtml,
@@ -20,6 +23,11 @@ import {
 
 const scriptPath = fileURLToPath(new URL("generate-doc-html.mjs", import.meta.url));
 const hasPandoc = spawnSync("pandoc", ["--version"], { encoding: "utf8" }).status === 0;
+const fixtureMetadata = {
+  title: "Fixture Title",
+  description: "Fixture summary",
+  lastUpdated: "2026-08-16",
+};
 
 function makeFixture(t) {
   const directoryPath = fs.mkdtempSync(path.join(os.tmpdir(), "generate-doc-html-"));
@@ -53,7 +61,7 @@ function runScript(directoryPath, outputPath) {
 test("builds pandoc arguments from report artifacts in document order", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writeFile(directoryPath, "TOC.md", "## Contents\n\nContents body.\n");
   writeSection(directoryPath, "10.md", "## Section 10\n\nSection 10 body.\n");
@@ -72,8 +80,9 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
   assert.deepEqual(pandocArgs(directoryPath), [
     "-o",
     "index.html",
-    "--from=gfm",
+    "--from=gfm+tex_math_dollars",
     "--to=html5",
+    "--mathml",
     "--standalone",
     "--toc",
     "--wrap=none",
@@ -81,6 +90,8 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
     "title=Fixture Title",
     "--metadata",
     "description=Fixture summary",
+    "--metadata",
+    "lastUpdated=2026-08-16",
     "ABSTRACT.md",
     path.join("sections", "2.md"),
     path.join("sections", "10.md"),
@@ -96,12 +107,17 @@ test("builds pandoc arguments from report artifacts in document order", (t) => {
       "--include-after-body",
     ),
   );
+  assert.ok(
+    pandocArgs(directoryPath, "index.html", { includeBeforeBody: path.join("tmp", "before-body.html") }).includes(
+      "--include-before-body",
+    ),
+  );
 });
 
 test("builds pandoc arguments from parts and chapters in document order", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writePartFile(directoryPath, "02", "PART.md", "# Part 2\n\nPart introduction.\n");
   writePartFile(directoryPath, "02", "10.md", "## Section 10\n\nSection 10 body.\n");
@@ -123,7 +139,7 @@ test("builds pandoc arguments from parts and chapters in document order", (t) =>
 test("rejects mixed flat chapters and part directories", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
   writePartFile(directoryPath, "01", "PART.md", "# Part 1\n\nPart introduction.\n");
 
@@ -133,7 +149,7 @@ test("rejects mixed flat chapters and part directories", (t) => {
 test("requires a part artifact in each part directory", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writePartFile(directoryPath, "01", "1.md", "## Section 1\n\nSection body.\n");
 
   assert.throws(() => inputFiles(directoryPath), /Missing PART\.md in sections\/01/);
@@ -142,9 +158,13 @@ test("requires a part artifact in each part directory", (t) => {
 test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
-  writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
+  writeSection(
+    directoryPath,
+    "1.md",
+    "## Section 1\n\nInline math: $E = mc^2$\n\n$$\n\\int_0^1 x^2\\,dx = \\frac{1}{3}\n$$\n",
+  );
 
   const result = runScript(directoryPath);
 
@@ -158,9 +178,16 @@ test("generates standalone HTML from report artifacts", { skip: !hasPandoc }, (t
   assert.match(html, /<meta property="og:description" content="Fixture summary">/);
   assert.ok(html.includes(`<meta property="og:url" content="${ghPagesDocumentUrl(directoryPath)}">`));
   assert.match(html, /<meta property="og:type" content="article">/);
+  assert.match(
+    html,
+    new RegExp(`<p class="last-updated">${LAST_UPDATED_LABEL}：<time datetime="2026-08-16">2026年8月16日</time></p>`),
+  );
+  assert.ok(html.indexOf('class="last-updated"') < html.indexOf("<header"));
   assert.match(html, /html \{\n\s+font-size: 16pt;\n\s+\}/);
   assert.match(html, /@media print \{\n\s+html \{\n\s+font-size: 12pt;\n\s+\}/);
-  assert.match(html, /Section body\./);
+  assert.match(html, /<math display="inline"/);
+  assert.match(html, /<math display="block"/);
+  assert.match(html, /xmlns="http:\/\/www\.w3\.org\/1998\/Math\/MathML"/);
   assert.match(html, new RegExp(AI_AUTHORSHIP_FOOTER));
 });
 
@@ -169,20 +196,26 @@ test("generates standalone HTML to an explicit output path", { skip: !hasPandoc 
   const outputPath = path.join(directoryPath, "dist", "doc", "index.html");
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(
+    directoryPath,
+    "metadata.json",
+    JSON.stringify({ title: "Fixture Title", description: "Fixture summary", lastUpdated: "" }),
+  );
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
   writeSection(directoryPath, "1.md", "## Section 1\n\nSection body.\n");
 
   const result = runScript(directoryPath, outputPath);
 
   assert.equal(result.status, 0, result.stderr);
-  assert.match(fs.readFileSync(outputPath, "utf8"), /Section body\./);
+  const html = fs.readFileSync(outputPath, "utf8");
+  assert.match(html, /Section body\./);
+  assert.doesNotMatch(html, /class="last-updated"/);
 });
 
 test("allows repeated footnote identifiers within one artifact", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^s1-term].\n\n[^s1-term]: Definition.\n");
 
   assert.doesNotThrow(() => validateFootnoteIdentifiers(directoryPath));
@@ -191,7 +224,7 @@ test("allows repeated footnote identifiers within one artifact", (t) => {
 test("rejects duplicate footnote identifiers across artifacts", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeSection(directoryPath, "1.md", "## Section 1\n\nFirst[^shared].\n\n[^shared]: First definition.\n");
   writeSection(directoryPath, "2.md", "## Section 2\n\nSecond[^shared].\n\n[^shared]: Second definition.\n");
 
@@ -204,7 +237,7 @@ test("rejects duplicate footnote identifiers across artifacts", (t) => {
 test("rejects local numeric footnote identifiers", (t) => {
   const directoryPath = makeFixture(t);
 
-  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  writeFile(directoryPath, "metadata.json", JSON.stringify(fixtureMetadata));
   writeSection(directoryPath, "1.md", "## Section 1\n\nTerm[^1].\n\n[^1]: Definition.\n");
 
   assert.throws(
@@ -234,6 +267,41 @@ test("fails when metadata description is blank", (t) => {
   writeFile(directoryPath, "ABSTRACT.md", "## Abstract\n\nAbstract body.\n");
 
   assert.throws(() => readMetadata(directoryPath), /non-empty string description/);
+});
+
+test("allows metadata lastUpdated to be missing or empty", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ title: "Fixture Title", description: "Fixture summary" }));
+  assert.doesNotThrow(() => readMetadata(directoryPath));
+  assert.equal(ghPagesBeforeBodyHtml(readMetadata(directoryPath)), "");
+
+  writeFile(
+    directoryPath,
+    "metadata.json",
+    JSON.stringify({ title: "Fixture Title", description: "Fixture summary", lastUpdated: "" }),
+  );
+  assert.doesNotThrow(() => readMetadata(directoryPath));
+  assert.equal(ghPagesBeforeBodyHtml(readMetadata(directoryPath)), "");
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ ...fixtureMetadata, lastUpdated: null }));
+  assert.doesNotThrow(() => readMetadata(directoryPath));
+  assert.equal(ghPagesBeforeBodyHtml(readMetadata(directoryPath)), "");
+});
+
+test("rejects an invalid non-empty metadata lastUpdated", (t) => {
+  const directoryPath = makeFixture(t);
+
+  writeFile(directoryPath, "metadata.json", JSON.stringify({ ...fixtureMetadata, lastUpdated: "2026-02-30" }));
+  assert.throws(() => readMetadata(directoryPath), /lastUpdated must be empty or a valid date in YYYY-MM-DD format/);
+});
+
+test("formats the last-updated date for visible HTML", () => {
+  assert.equal(formatJapaneseDate("2026-08-16"), "2026年8月16日");
+  assert.equal(
+    ghPagesBeforeBodyHtml(fixtureMetadata),
+    `<p class="last-updated">${LAST_UPDATED_LABEL}：<time datetime="2026-08-16">2026年8月16日</time></p>\n`,
+  );
 });
 
 test("escapes OGP title for HTML attributes", () => {

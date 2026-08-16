@@ -40,10 +40,12 @@ Generate document metadata as minimal JSON:
 ```json
 {
   "title": ...,
-  "description": ...
+  "description": ...,
+  "lastUpdated": "YYYY-MM-DD"
 }
 ```
 
 * `title`: The report title. Use same language as the report writing rule.
 * `description`: A one-sentence summary for search snippets and OGP cards. Compress the abstract into about 80-120 Japanese characters, put the main claim or conclusion first, and avoid citations, Markdown, and line breaks.
+* `lastUpdated`: The date when the report content was last updated, in ISO 8601 `YYYY-MM-DD` format. It may be omitted, `null`, or left empty when unknown; in that case, generated HTML does not show a last-updated date.
 * Do not add extra attributes unless project-specific instructions require them.
