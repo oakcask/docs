@@ -4,9 +4,10 @@
 
 ### 国旗損壊罪・刑事立法
 
+- 国旗の損壊等の処罰に関する法律（令和8年法律第69号）。『e-Gov法令検索』。2026年8月17日参照。URL: <https://laws.e-gov.go.jp/law/508AC1000000069>。
+- 警察庁（2026）「国旗の損壊等の処罰に関する法律の施行に伴う関係規定の適切な運用等について（通達）」2026年7月24日。URL: <https://www.npa.go.jp/laws/notification/keiji/souichi/souichi01/kokkisekou.pdf>。
 - 衆議院（2026a）「衆法 第221回国会 18 国旗の損壊等の処罰に関する法律案」『議案審議経過情報』。URL: <https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE29A2.htm>。
 - 衆議院（2026b）「国旗の損壊等の処罰に関する法律案要綱」。URL: <https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/housei/pdf/221hou18youkou.pdf/%24File/221hou18youkou.pdf>。
-- 警察庁（2026）「国旗の損壊等の処罰に関する法律の施行に伴う関係規定の適切な運用等について（通達）」2026年7月24日。URL: <https://www.npa.go.jp/laws/notification/keiji/souichi/souichi01/kokkisekou.pdf>。
 - 刑法（明治40年法律第45号）第233条、第234条および第261条。『e-Gov法令検索』。URL: <https://laws.e-gov.go.jp/law/140AC0000000045>。
 - 江藤隆之（2026）「日本国章損壊等罪の立法に関する基礎的考察」『桃山法学』44, 23-50。DOI: <https://doi.org/10.50996/momoyamahougaku.44.0_23>。
 - 上田正基（2016）『その行為、本当に処罰しますか――憲法的刑事立法論序説』弘文堂。ISBN: 9784335356780。
@@ -15,6 +16,12 @@
 - Fuller, L. L. (1969). *The Morality of Law*, revised edition. Yale University Press. ISBN: 9780300010701.
 - Schauer, F. (1978). “Fear, Risk and the First Amendment: Unraveling the Chilling Effect.” *Boston University Law Review*, 58, 685-732. URL: <https://scholarship.law.wm.edu/facpubs/879/>.
 - Sunstein, C. R. (1996). “On the Expressive Function of Law.” *University of Pennsylvania Law Review*, 144(5), 2021-2053. DOI: <https://doi.org/10.2307/3312647>.
+
+### 施行直後の観察事例
+
+- @chawanmush60392（2026）「『囲まんといてくださいよ〜僕たちも通報あっただけなんで』だって」『X』2026年8月15日。2026年8月17日参照。URL: <https://x.com/chawanmush60392/status/2088597282950455562>。
+- @chihaya0425（2026）「終戦の日に靖国周辺でバツ印の日の丸を掲げた左翼デモ50人」『X』2026年8月16日。2026年8月17日参照。URL: <https://x.com/chihaya0425/status/2088792797252108436>。
+- @marukobooks（2026）「きのうのデモで通報されたまるい穴が空いた布はこれだよ〜〜〜ん」『X』2026年8月16日。2026年8月17日参照。URL: <https://x.com/marukobooks/status/2088865018175795310>。
 
 ### 憲法と制度の更新
 
