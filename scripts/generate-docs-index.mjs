@@ -72,7 +72,7 @@ export function docsIndexHtml(directoryPaths) {
     <meta property="og:type" content="website">
   </head>
   <body>
-    <h1><a href="https://github.com/oakcask/docs">oakcask/docs</h1>
+    <h1><a href="https://github.com/oakcask/docs">oakcask/docs</a></h1>
     <ul>
 ${links.join("\n")}
     </ul>
