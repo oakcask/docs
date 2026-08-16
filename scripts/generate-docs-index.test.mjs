@@ -45,6 +45,13 @@ test("generates OGP type for website index", () => {
   assert.match(docsIndexHtml([]), /<meta property="og:type" content="website">/);
 });
 
+test("closes the repository link inside the heading", () => {
+  assert.match(
+    docsIndexHtml([]),
+    /<h1><a href="https:\/\/github\.com\/oakcask\/docs">oakcask\/docs<\/a><\/h1>/,
+  );
+});
+
 test("generates OGP URL for website index", (t) => {
   const previousBaseUrl = process.env.DOCS_BASE_URL;
   t.after(() => {
