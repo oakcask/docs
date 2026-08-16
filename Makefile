@@ -28,8 +28,9 @@ endef
 setup: $(SKILLS_SYMLINKS)
 docs: $(INDEX_HTML) $(DOCS_HTML)
 new: $(AGENTS_TEMPLATE)
-	@test -d "$(DIR)" || (echo 'Directory already exists: $(DIR)' >&2; exit 1)
+	mkdir -p "$(DIR)"
 	cp "$(AGENTS_TEMPLATE)" "$(DIR)/AGENTS.md"
+	make
 
 $(DOCS_HTML): $(PROJECT_METADATA) $(INDEX_HTML) scripts/generate-docs-index.mjs
 	mkdir -p $(@D)

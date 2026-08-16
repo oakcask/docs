@@ -16,6 +16,7 @@ const reviewPrompts = [
   "REVIEW-dedup.md",
   "REVIEW-consistency.md",
   "REVIEW-style.md",
+  "REVIEW-number-style.md",
 ];
 
 function parseMaxIterations(arguments_) {
@@ -83,10 +84,6 @@ export function correct({
 
     executePrompt("UPDATE.md");
     executePrompt("CLOSING.md");
-
-    if (!commentsExist()) {
-      return;
-    }
   }
 
   throw new Error(

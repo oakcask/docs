@@ -10,6 +10,7 @@ const USAGE = "Usage: node scripts/generate-doc-html.mjs <directory> [output-htm
 export const DOCS_BASE_URL_ENV = "DOCS_BASE_URL";
 export const DEFAULT_DOCS_BASE_URL = "https://oakcask.github.io/docs/";
 export const AI_AUTHORSHIP_FOOTER = "この文章のほとんどの部分は AI エージェントによって記述された。";
+export const LAST_UPDATED_LABEL = "最終更新日";
 
 function fail(message) {
   throw new Error(message);
@@ -57,7 +58,34 @@ export function readMetadata(directoryPath) {
     fail("metadata.json must contain a non-empty string description");
   }
 
+  if (
+    metadata.lastUpdated !== undefined &&
+    metadata.lastUpdated !== null &&
+    (typeof metadata.lastUpdated !== "string" ||
+      (metadata.lastUpdated.trim() !== "" && !isIsoDate(metadata.lastUpdated)))
+  ) {
+    fail("metadata.json lastUpdated must be empty or a valid date in YYYY-MM-DD format");
+  }
+
   return metadata;
+}
+
+export function isIsoDate(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+
+  if (!match) {
+    return false;
+  }
+
+  const [, year, month, day] = match.map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+export function formatJapaneseDate(isoDate) {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return `${year}年${month}月${day}日`;
 }
 
 export function toMetadataArgs(metadata) {
@@ -129,6 +157,15 @@ ${descriptionMeta}<meta property="og:type" content="article">
     }
   }
 </style>
+`;
+}
+
+export function ghPagesBeforeBodyHtml(metadata) {
+  if (typeof metadata.lastUpdated !== "string" || metadata.lastUpdated.trim() === "") {
+    return "";
+  }
+
+  return `<p class="last-updated">${LAST_UPDATED_LABEL}：<time datetime="${escapeHtmlAttribute(metadata.lastUpdated)}">${formatJapaneseDate(metadata.lastUpdated)}</time></p>
 `;
 }
 
@@ -266,8 +303,9 @@ export function pandocArgs(directoryPath, outputPath = "index.html", options = {
   const args = [
     "-o",
     outputPath,
-    "--from=gfm",
+    "--from=gfm+tex_math_dollars",
     "--to=html5",
+    "--mathml",
     "--standalone",
     "--toc",
     "--wrap=none",
@@ -275,6 +313,10 @@ export function pandocArgs(directoryPath, outputPath = "index.html", options = {
 
   if (options.includeInHeader) {
     args.push("--include-in-header", options.includeInHeader);
+  }
+
+  if (options.includeBeforeBody) {
+    args.push("--include-before-body", options.includeBeforeBody);
   }
 
   if (options.includeAfterBody) {
@@ -301,16 +343,22 @@ export function main(args) {
   const metadata = readMetadata(directoryPath);
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "generate-doc-html-"));
   const headerPath = path.join(temporaryDirectory, "header.html");
+  const beforeBodyPath = path.join(temporaryDirectory, "before-body.html");
   const footerPath = path.join(temporaryDirectory, "footer.html");
 
   try {
     fs.writeFileSync(headerPath, ghPagesHeaderHtml(metadata, ghPagesDocumentUrl(directoryPath)));
+    fs.writeFileSync(beforeBodyPath, ghPagesBeforeBodyHtml(metadata));
     fs.writeFileSync(footerPath, ghPagesFooterHtml());
     validateFootnoteIdentifiers(directoryPath);
 
     const result = spawnSync(
       "pandoc",
-      pandocArgs(directoryPath, outputPath, { includeInHeader: headerPath, includeAfterBody: footerPath }),
+      pandocArgs(directoryPath, outputPath, {
+        includeInHeader: headerPath,
+        includeBeforeBody: beforeBodyPath,
+        includeAfterBody: footerPath,
+      }),
       {
         cwd: directoryPath,
         stdio: "inherit",

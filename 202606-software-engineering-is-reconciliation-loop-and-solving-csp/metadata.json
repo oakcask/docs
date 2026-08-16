@@ -1,4 +1,5 @@
 {
   "title": "ソフトウェアエンジニアリング：システムを reconciliation loop により導き、方針決定のため制約充足問題を解くこと",
-  "description": "ソフトウェアエンジニアリングを、システムを望ましい状態へ導くreconciliation loopと制約充足的な方針探索として捉え直す。"
+  "description": "ソフトウェアエンジニアリングを、システムを望ましい状態へ導くreconciliation loopと制約充足的な方針探索として捉え直す。",
+  "lastUpdated": "2026-07-03"
 }
