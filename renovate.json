@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", "customManagers:githubActionsVersions", "helpers:pinGitHubActionDigests"],
+  "fetchChangeLogs": "off",
   "internalChecksFilter": "strict",
   "platformAutomerge": false,
   "prCreation": "immediate",
@@ -16,5 +17,6 @@
       "automerge": true
     }
   ],
+  "prBodyColumns": ["Package", "Update", "Change"],
   "rangeStrategy": "bump"
 }
