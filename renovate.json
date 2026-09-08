@@ -3,7 +3,7 @@
   "extends": ["config:recommended", "customManagers:githubActionsVersions", "helpers:pinGitHubActionDigests"],
   "internalChecksFilter": "strict",
   "platformAutomerge": false,
-  "prCreation": "not-pending",
+  "prCreation": "immediate",
   "prConcurrentLimit": 1,
   "packageRules": [
     {
