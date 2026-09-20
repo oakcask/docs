@@ -9,6 +9,11 @@
   "packageRules": [
     {
       "matchDatasources": ["npm"],
+      "matchPackageNames": ["renovate"],
+      "schedule": ["* * * * 0"]
+    },
+    {
+      "matchDatasources": ["npm"],
       "minimumReleaseAge": "5 day"
     },
     {
