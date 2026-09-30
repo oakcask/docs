@@ -84,6 +84,10 @@ export function correct({
 
     executePrompt("UPDATE.md");
     executePrompt("CLOSING.md");
+
+    if (!commentsExist()) {
+      return;
+    }
   }
 
   throw new Error(

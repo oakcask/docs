@@ -4,11 +4,14 @@ import test from "node:test";
 import { correct } from "./correct.mjs";
 
 const reviews = [
+  "REVIEW-falsifiability.md",
   "REVIEW-citation.md",
   "REVIEW-quality.md",
   "REVIEW-naturality.md",
   "REVIEW-dedup.md",
   "REVIEW-consistency.md",
+  "REVIEW-style.md",
+  "REVIEW-number-style.md",
 ];
 
 test("stops after reviews when there are no comments", () => {
